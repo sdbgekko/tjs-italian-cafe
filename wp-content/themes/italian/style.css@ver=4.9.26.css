@@ -1,0 +1,52 @@
+/*
+Theme Name: italian
+Theme URI: http://www.agency850.com/
+Description: italian Theme
+Tags: creative, portfolio, multi-purpose, clean, retina, responsive, parallax, mega menu, blog, agency, business, fullscreen, modern, background video, ajax
+Author: Agency850
+Author URI: http://www.agency850.com/
+Version: 13.0
+License: GNU General Public License
+License URI: licence/GPL.txt
+
+CSS changes can be made in files in the /css/ folder. This is a placeholder file required by WordPress, so do not delete it.
+
+*/
+
+body { 
+    font-family: 'times new roman', times, serif !important;
+	color: #414141;
+}
+
+.tp-caption {
+	text-shadow: 0px 0px 30px #000, 0px 0px 50px #000, 0px 0px 70px #000 , 0px 0px 100px #000; 
+}
+
+.footer_inner {
+    background-image: url(../../uploads/2017/12/bottomback.png) !important;
+    background-position: 0 0 !important;
+}
+@font-face {
+    font-family: 'Master Of Break';
+    src: url('../../../new/wp-content/themes/italian/Font/MasterOfBreak.eot');      
+    src: url('https://tjsitaliancafe.com/wp-content/themes/italian/MasterOfBreak.eot?') format('embedded-opentype'),
+        url('../../../new/wp-content/themes/italian/Font/MasterOfBreak.woff') format('woff'),     
+        url('../../../new/wp-content/themes/italian/Font/MasterOfBreak.ttf') format('truetype');    
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Master Of Break';
+    src: url('../../../new/wp-content/themes/italian/Font/MasterOfBreak_1.eot');                   
+    src: url('https://tjsitaliancafe.com/wp-content/themes/italian/MasterOfBreak_1.eot?') format('embedded-opentype'),
+        url('../../../new/wp-content/themes/italian/Font/MasterOfBreak_1.woff') format('woff'),       
+        url('../../../new/wp-content/themes/italian/Font/MasterOfBreak_1.ttf') format('truetype');     
+    font-weight: normal;
+    font-style: normal;
+}
+
+.custombut {
+    padding-top: 89px;
+    margin-left: -263px;
+}

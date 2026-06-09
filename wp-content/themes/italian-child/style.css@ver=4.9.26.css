@@ -1,0 +1,232 @@
+/*
+Theme Name: italian Child
+Theme URI: http://www.agency850.com/
+Description: A child theme of italian Theme
+Author: Agency850
+Author URI: http://www.agency850.com/
+Version: 1.0.0
+Template: italian
+*/
+@import url("https://tjsitaliancafe.com/wp-content/themes/new/style.css"); 
+
+@import url("../../../new/wp-content/themes/italian-child/fonts/style.css");
+
+@import url("../../../new/wp-content/themes/italian-child/fonts/stylesheet.css");
+
+.customtesti .flex-control-nav.flex-control-paging > li:last-child {
+    background-attachment: scroll;
+    background-clip: border-box;
+    background-color: transparent !important;
+    background-image: url("../../../new/wp-content/uploads/2017/12/bp_right_arrow.png");
+    background-origin: padding-box;
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    background-size: auto auto;
+    float: right;
+    height: 100px;
+    position: absolute;
+    right: 0;
+    top: 38%;
+    width: 50px;
+}
+.customtesti .testimonials_c_holder.light .flex-control-nav li a {
+  background-color: unset !important;
+}
+.customtesti .flex-control-nav.flex-control-paging > li:first-child {
+  background: rgba(0, 0, 0, 0) url("../../../new/wp-content/uploads/2017/12/bp_left_arrow.png") no-repeat scroll 0 0;
+  float: left;
+  height: 100px;
+  left: 0;
+  position: absolute;
+  top: 38%;
+  width: 50px;
+}
+
+
+@media screen and (max-width: 600px) {
+	.testimonials_c_holder .testimonial_content_inner {
+		padding: 60px 0px;
+	}
+	.lettersp {
+		word-wrap: break-word;
+	}
+	.customcont .vc_column-inner.vc_custom_1512809635998 {
+		padding-right: 15px !important;
+	}
+	.cafe .vc_column-inner.vc_custom_1512748692003 {
+		padding-left: 15px !important;
+		padding-right: 10px !important;
+	}
+	.tjscafe .vc_custom_1512748704251 {
+		padding-right: 0px !important;
+	}
+	.cafe.vc_custom_1512811442924 {
+		padding-right: 15px !important;
+	}
+	.testnoo {
+		font-size:22px !important;
+	}
+	.customtesti .testimonial_image_holder {
+    	float: none !important;
+	}
+	.footer_top .widget.widget_nav_menu li {
+		display: block;
+		text-align: center;
+		padding-right: 0 !important;
+	}
+	
+
+}
+@media screen and (max-width: 1000px) {
+	nav.mobile_menu ul li, nav.mobile_menu ul li ul li {
+		text-align: center;
+	}
+	.customback.vc_custom_1512820874648 {
+		padding-top: 50px !important;
+		padding-bottom: 50px !important;
+		background-size: 100% 100% !important;
+	}
+	.customtesti .testimonials_c.testimonials_c_carousel li .testimonial_content_inner{
+		text-align: center !important;
+	}
+	
+}
+
+@media (min-width: 320px) and (max-width: 1000px) {
+.footer1.my li {
+  display: none !important;
+}
+	.head_call1 {
+    color: #9a9a9a;
+    font-weight: bold;
+}
+	.header_top .right {
+    position: unset !important;
+}
+	
+}
+
+
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 767px) {
+.cafe .vc_custom_1512975719986 {
+    padding-right: 0px !important;
+}
+.cafe .vc_custom_1512975408620 {
+    padding-left: 0px !important;
+}	
+	.top_video .vc_custom_1512627619809 {
+    
+    padding-bottom: 100px !important;
+}
+	.customcont .wpb_wrapper h1 {
+    padding: 35px 0px 0px;
+    text-align: center;
+}
+.my_testi .vc_custom_1512632308755 {
+    padding: 0px !important;
+    margin: -50px 0px 0px;
+}
+	.customback.vc_custom_1512820874648{
+		
+		padding-top:100px !important;
+	}
+	.my_tjs .vc_custom_1513062831035 {
+    padding-left: 15px !important;
+    margin: -50px 0px 0px;
+}
+}
+
+
+
+
+.mlab-modal-dialog {
+	width: 85% !important;
+	margin: 40px auto 0 auto !important;
+}
+
+.mlab-close { 
+    width: auto !important;
+	height: 23px !important;
+}
+
+.mlab-modal-body {
+	padding: 0 20px !important;
+}
+
+.mlab-modal-footer {
+	margin-top: 0px !important;
+	padding: 10px 20px 0 20px !important;
+}
+
+.title.has_background {
+	background-color: #000 !important;
+}
+
+@media screen and (max-width : 1200px) {
+	
+	.mlab-modal-dialog iframe {
+		max-height: 600px !important;
+	}
+}
+
+@media screen and (max-width : 600px) {
+	.mlab-modal-dialog {
+	margin: 5px auto 0 auto !important;
+}
+	
+	.mlab-modal-dialog iframe {
+		max-height: 280px !important;
+	}
+}
+
+body {
+	font-family: times new roman, times, serif;
+}
+
+.ct-section {
+    margin-top: -80px;
+    padding-top: 200px;
+	padding-bottom: 100px;
+}
+
+nav.mobile_menu li a {
+    text-transform: uppercase!important;
+}
+
+@media (max-width:768px) {
+	.ct-section {
+    	margin-top: -150px;
+    	padding-top: 290px;
+		padding-bottom: 230px;
+	}
+	.contact-setction {
+		margin-top: -180px;
+	}
+	.footer_inner {
+    	background-size: 200% 100%!important;
+	}
+	.footer1 li {
+		display: inline-flex;
+		flex-direction: column;
+		text-align:center;
+	}
+	.footer1 li .alignleft {
+		padding: 0;
+    	margin: 0 auto;
+    	width: 130px;
+	}
+	span.customdes {
+    	text-align: center;
+	}
+}
+.custombut {
+    padding-top: 89px;
+    margin-left: -263px;
+}
+
+
+.head_call1 {
+  font-family: 'Times New Roman', serif!important;
+  font-size: 24px!important;
+}

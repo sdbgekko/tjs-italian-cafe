@@ -1,0 +1,19 @@
+@font-face {
+    font-family: 'Master Of Break';
+    src: url('MasterOfBreak.eot');
+    src: url('MasterOfBreak.eot@') format('embedded-opentype'),
+        url('MasterOfBreak.woff') format('woff'),
+        url('MasterOfBreak.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Master Of Break';
+    src: url('MasterOfBreak_1.eot');
+    src: url('MasterOfBreak_1.eot@') format('embedded-opentype'),
+        url('MasterOfBreak_1.woff') format('woff'),
+        url('MasterOfBreak_1.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}

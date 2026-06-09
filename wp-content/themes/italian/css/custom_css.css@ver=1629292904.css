@@ -1,0 +1,165 @@
+
+
+.content {
+    margin-top: -258px;
+}
+.mlab-modal-dialog {
+    width: 800px !important;
+}
+.title_holder {
+    height: 475px !important;
+}
+.footer2 li {
+    display: inline;
+}
+.custom-top .widget_nav_menu li {
+    display: inline-block;
+    padding-right: 6% !important;
+}
+.custom-top .widget_nav_menu li a {
+    text-transform: uppercase;
+    color: #fff;
+    font-family: 'Letter Gothic Std Medium';
+}
+.footer_top .widget.widget_nav_menu li:last-child {
+    padding-right: 0px !important;
+}
+.custom-top {
+   width: 90%;
+    border-bottom: 1px solid #37261d;
+    margin-bottom: 55px;
+}
+.footer2 {
+    padding-top: 25px;
+}
+.footer1 li {
+    border-bottom: 1px dotted #927c75;
+    width: 100%;
+    padding: 9px;
+    letter-spacing: 3px;
+    list-style: none;
+}
+.footer1 li h2 {
+    letter-spacing: 3px;
+}
+.header_bottom {
+    padding: 0 0px;
+}
+nav.main_menu ul li a {
+    line-height: 50px;
+    font-family: 'Letter Gothic Std Medium';
+    font-size: 16px;
+    padding: 0 25px;
+}
+nav.main_menu ul li {
+    float: none;
+}
+nav.main_menu {
+    position: absolute !important;
+    text-align: center;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    left: 0 !important;
+}
+.footer_bottom p {
+    font-size: 16px;
+    letter-spacing: 1px;
+    font-family: 'Letter Gothic Std Medium';
+}
+.header_top .left {
+    position: absolute;
+    top: 47px;
+    width: 20%;
+    left: 12%;
+    font-family: 'Letter Gothic Std Medium';
+    font-size: 15px;
+    text-transform: uppercase;
+}
+.header_top .right {
+    position: absolute;
+    top: 57px;
+    right: 12%;
+    font-family: 'Letter Gothic Std Medium';
+    font-size: 20px;
+    text-transform: uppercase;
+}
+.footer1 li:last-child {
+    border: medium none;
+    line-height: 50px;
+}
+.header_top_bottom_holder .header_top {
+    height: auto;
+}
+.footer1 p {
+    padding-top: 10px;
+    padding-left: 10%;
+}
+.footer1 .fa.fa-facebook {
+    border: 1px solid #fff;
+    float: left;
+    border-radius: 22px;
+    font-size: 26px;
+    padding: 8px 12px;
+}
+.footer_inner {
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.footer_top {
+    padding: 31px 0 44px !important;
+}
+.footer_top .widget.widget_nav_menu li {
+    padding: 0px 56px 16px 0px !important;
+}
+.header_top .left .inner>div, .header_top .left .inner>div:last-child {
+    float: none;
+}
+.header_top .footer1 li {
+    line-height: 45px;
+font-size: 18px;
+    font-weight: bold;
+}
+.head_call1 {
+    font-weight: bold;
+}
+
+.footer_inner {
+    background-size: 100% 100% !important;
+}
+
+@media only screen and (max-width: 600px) {
+.tp-parallax-wrap {
+   /* left: 25px !important;*/
+}
+.tp-caption {
+    word-wrap: break-word !important;
+    font-size: 20px !important;
+}
+div#rev_slider_1_1_wrapper {
+    height: 280px !important;
+}
+}
+
+.mtsnb-content {
+    font-family: sans-serif;
+    font-weight: 600;
+    font-size: 18px
+}
+
+/*custom styles for mobile menu*/
+.mobile_menu_button i.qode_icon_font_awesome {
+  font-size: 18px;
+  margin-left: 30px;
+}
+
+.mobile_menu_button i.qode_icon_font_awesome::after {
+  content: 'menu';
+  text-transform: uppercase;
+  font-family: arial;
+  padding-left: 6px
+}
+
+.header_inner_right.left_side {
+  position: absolute!important;;
+  right: 30px
+}
