@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TJ&rsquo;s Italian Caf&eacute; &middot; Indian Rocks Beach &middot; Est. 1989</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&amp;family=Lora:ital,wght@0,400;0,500;1,400;1,500&amp;family=Jost:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: #FBF8F1; }
+  ::selection { background: #BE9A4E; color: #FBF8F1; }
+  .img-fill { display: block; background-size: cover; background-position: center; }
+  a.nav-link { color: #FBF8F1; text-decoration: none; letter-spacing: 2.5px; font-weight: 500; transition: color 0.25s; }
+  a.nav-link:hover { color: #E3C97F; }
+  a.btn-gold { display: inline-block; background: #BE9A4E; color: #14242F; text-decoration: none; letter-spacing: 3px; font-weight: 600; transition: background 0.25s; }
+  a.btn-gold:hover { background: #E3C97F; }
+  a.btn-ghost { display: inline-block; border: 1px solid rgba(251,248,241,0.6); color: #FBF8F1; text-decoration: none; letter-spacing: 3px; font-weight: 500; transition: border-color 0.25s, background 0.25s; }
+  a.btn-ghost:hover { border-color: #FBF8F1; background: rgba(251,248,241,0.1); }
+  a.link-rule { display: inline-block; color: #14242F; text-decoration: none; letter-spacing: 3px; font-weight: 600; border-bottom: 2px solid #BE9A4E; padding-bottom: 6px; transition: color 0.25s; }
+  a.link-rule:hover { color: #BE9A4E; }
+  a.btn-navy { display: inline-block; background: #14242F; color: #FBF8F1; text-decoration: none; letter-spacing: 3px; font-weight: 500; transition: background 0.25s, color 0.25s; }
+  a.btn-navy:hover { background: #BE9A4E; color: #14242F; }
+  a.link-gold { color: #E3C97F; text-decoration: none; border-bottom: 1px solid rgba(227,201,127,0.5); }
+  a.tel-footer { color: #FBF8F1; text-decoration: none; letter-spacing: 1px; border-bottom: 1px solid #BE9A4E; padding-bottom: 3px; transition: color 0.25s; }
+  a.tel-footer:hover { color: #E3C97F; }
+  #sticky-nav { position: fixed; top: 0; left: 0; right: 0; z-index: 60; display: flex; align-items: center; justify-content: space-between; padding: 14px 56px; background: rgba(20, 36, 47, 0.97); box-shadow: 0 2px 24px rgba(20, 36, 47, 0.35); transform: translateY(-110%); transition: transform 0.3s ease; }
+  #sticky-nav.show { transform: translateY(0); }
+</style>
+</head>
+<body>
+
+<div style="font-family: 'Jost', sans-serif; color: #1C2B36; background: #FBF8F1; min-width: 1100px;">
+
+  <!-- ============ NAV (over hero) ============ -->
+  <div style="position: absolute; top: 0; left: 0; right: 0; z-index: 50; display: flex; align-items: center; justify-content: space-between; padding: 28px 56px;">
+    <div style="display: flex; flex-direction: column; line-height: 1;">
+      <span style="font-family: 'Marcellus', serif; font-size: 34px; color: #FBF8F1; letter-spacing: 2px;">TJ&rsquo;S</span>
+      <span style="font-size: 10px; letter-spacing: 4.5px; color: #E3C97F; margin-top: 6px;">ITALIAN CAF&Eacute; &middot; EST. 1989</span>
+    </div>
+    <div style="display: flex; align-items: center; gap: 36px;">
+      <a href="#story" class="nav-link" style="font-size: 13px;">OUR STORY</a>
+      <a href="#kitchen" class="nav-link" style="font-size: 13px;">THE KITCHEN</a>
+      <a href="#menu" class="nav-link" style="font-size: 13px;">MENU</a>
+      <a href="#visit" class="nav-link" style="font-size: 13px;">VISIT</a>
+      <a href="tel:7275961515" class="btn-gold" style="font-size: 13px; letter-spacing: 2.5px; padding: 14px 28px;">CALL (727) 596-1515</a>
+    </div>
+  </div>
+
+  <!-- ============ STICKY NAV (appears on scroll) ============ -->
+  <div id="sticky-nav">
+    <div style="display: flex; align-items: baseline; gap: 14px;">
+      <span style="font-family: 'Marcellus', serif; font-size: 24px; color: #FBF8F1; letter-spacing: 2px;">TJ&rsquo;S</span>
+      <span style="font-size: 9px; letter-spacing: 4px; color: #E3C97F;">ITALIAN CAF&Eacute;</span>
+    </div>
+    <div style="display: flex; align-items: center; gap: 32px;">
+      <a href="#story" class="nav-link" style="font-size: 12px;">OUR STORY</a>
+      <a href="#kitchen" class="nav-link" style="font-size: 12px;">THE KITCHEN</a>
+      <a href="#menu" class="nav-link" style="font-size: 12px;">MENU</a>
+      <a href="#visit" class="nav-link" style="font-size: 12px;">VISIT</a>
+      <a href="tel:7275961515" class="btn-gold" style="font-size: 12px; letter-spacing: 2.5px; padding: 11px 22px;">CALL (727) 596-1515</a>
+    </div>
+  </div>
+
+  <!-- ============ HERO ============ -->
+  <div style="position: relative; height: 92vh; min-height: 680px; background: #14242F;">
+    <div class="img-fill" style="position: absolute; inset: 0; width: 100%; height: 100%; background-image: url('assets/hero-sunset.jpg');"></div>
+    <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(20,36,47,0.55) 0%, rgba(20,36,47,0.15) 45%, rgba(20,36,47,0.72) 100%); pointer-events: none;"></div>
+    <div style="position: absolute; left: 0; right: 0; bottom: 0; padding: 0 56px 88px; display: flex; flex-direction: column; align-items: center; text-align: center; pointer-events: none;">
+      <div style="font-size: 13px; letter-spacing: 5px; color: #E3C97F; margin-bottom: 22px;">KIM &amp; TJ&rsquo;S &middot; INDIAN ROCKS BEACH &middot; ONE BLOCK FROM THE SAND</div>
+      <h1 style="font-family: 'Marcellus', serif; font-size: 76px; font-weight: 400; color: #FBF8F1; margin: 0 0 24px; line-height: 1.08; max-width: 980px; text-wrap: balance;">Where Indian Rocks Beach has had dinner since 1989</h1>
+      <p style="font-family: 'Lora', serif; font-style: italic; font-size: 21px; color: rgba(251,248,241,0.85); margin: 0 0 40px; max-width: 620px; line-height: 1.6;">Hundred-year-old family recipes, fresh-off-the-docks Gulf seafood, and the meatballs people cross the bridge for. Come as you are &mdash; sandy feet and all.</p>
+      <div style="display: flex; gap: 18px; pointer-events: auto;">
+        <a href="tel:7275961515" class="btn-gold" style="font-size: 14px; padding: 18px 40px;">RESERVE TONIGHT &middot; (727) 596-1515</a>
+        <a href="#menu" class="btn-ghost" style="font-size: 14px; padding: 18px 40px;">SEE THE MENU FIRST</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ CREDO STRIP ============ -->
+  <div style="background: #14242F; border-top: 1px solid rgba(227,201,127,0.25); padding: 26px 56px; display: flex; justify-content: center; gap: 64px; flex-wrap: wrap;">
+    <span style="font-size: 12px; letter-spacing: 3.5px; color: #E3C97F;">FAMILY OWNED &amp; OPERATED</span>
+    <span style="font-size: 12px; letter-spacing: 3.5px; color: rgba(251,248,241,0.55);">EVERY DISH MADE FROM SCRATCH</span>
+    <span style="font-size: 12px; letter-spacing: 3.5px; color: #E3C97F;">HUNDRED-YEAR-OLD RECIPES</span>
+    <span style="font-size: 12px; letter-spacing: 3.5px; color: rgba(251,248,241,0.55);">OPEN 7 DAYS &middot; LUNCH &amp; DINNER</span>
+  </div>
+
+  <!-- ============ STORY ============ -->
+  <div id="story" style="padding: 130px 56px 110px; max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 90px; align-items: center;">
+    <div style="position: relative;">
+      <div class="img-fill" style="width: 100%; height: 620px; background-image: url('assets/chef-tj.jpg');"></div>
+      <div style="position: absolute; right: -28px; bottom: -28px; background: #BE9A4E; color: #14242F; padding: 26px 30px; max-width: 230px;">
+        <div style="font-family: 'Marcellus', serif; font-size: 44px; line-height: 1;">35+</div>
+        <div style="font-size: 11px; letter-spacing: 2.5px; margin-top: 8px; line-height: 1.6;">YEARS COOKING FOR INDIAN ROCKS BEACH</div>
+      </div>
+    </div>
+    <div>
+      <div style="font-size: 12px; letter-spacing: 4.5px; color: #BE9A4E; margin-bottom: 18px;">OUR STORY</div>
+      <h2 style="font-family: 'Marcellus', serif; font-size: 48px; font-weight: 400; margin: 0 0 28px; line-height: 1.15; text-wrap: balance;">Started by a kid from Philly. Run by family ever since.</h2>
+      <p style="font-family: 'Lora', serif; font-size: 17px; line-height: 1.85; color: #3D4D58; margin: 0 0 20px;">Thomas &ldquo;TJ&rdquo; Smith learned to toss dough in front of a pizza-shop window in Philadelphia. Thirty-five years later, he&rsquo;s still in this kitchen on Gulf Boulevard &mdash; he and Kim, cooking his family&rsquo;s recipes, some more than a century old, seven nights a week.</p>
+      <p style="font-family: 'Lora', serif; font-size: 17px; line-height: 1.85; color: #3D4D58; margin: 0 0 36px;">Nothing comes from a freezer. Everything is saut&eacute;ed, baked, and plated to order &mdash; the way it would be at a Sunday table in the old country, with the Gulf breeze drifting in.</p>
+      <a href="#kitchen" class="link-rule" style="font-size: 13px;">MEET THE KITCHEN &rarr;</a>
+    </div>
+  </div>
+
+  <!-- ============ GALLERY ============ -->
+  <div style="padding: 0 56px 130px; max-width: 1320px; margin: 0 auto;">
+    <div style="display: grid; grid-template-columns: 1.4fr 1fr 1fr; grid-template-rows: 280px 280px; gap: 18px;">
+      <div style="grid-row: span 2; width: 100%; height: 100%;">
+        <div class="img-fill" style="width: 100%; height: 100%; background-image: url('assets/gal-pasta.jpg');"></div>
+      </div>
+      <div class="img-fill" style="width: 100%; height: 100%; background-image: url('assets/gal-grouper.jpg');"></div>
+      <div class="img-fill" style="width: 100%; height: 100%; background-image: url('assets/gal-patio.jpg');"></div>
+      <div class="img-fill" style="width: 100%; height: 100%; background-image: url('assets/gal-wine.jpg');"></div>
+      <div class="img-fill" style="width: 100%; height: 100%; background-image: url('assets/gal-pizza.jpg');"></div>
+    </div>
+  </div>
+
+  <!-- ============ FEATURE 1: THE SETTING ============ -->
+  <div style="background: #14242F; color: #FBF8F1;">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 130px 56px; display: grid; grid-template-columns: 1fr 1fr; gap: 90px; align-items: center;">
+      <div>
+        <div style="font-size: 12px; letter-spacing: 4.5px; color: #E3C97F; margin-bottom: 18px;">THE SETTING</div>
+        <h2 style="font-family: 'Marcellus', serif; font-size: 46px; font-weight: 400; margin: 0 0 28px; line-height: 1.15; text-wrap: balance;">The patio fills before the sun goes down</h2>
+        <p style="font-family: 'Lora', serif; font-size: 17px; line-height: 1.85; color: rgba(251,248,241,0.78); margin: 0 0 20px;">A lush garden patio, a warm dining room humming with Sinatra, and the Gulf of Mexico a short stroll away. Come straight from the sand for sunset cocktails, or dress up a little &mdash; both feel right here.</p>
+        <p style="font-family: 'Lora', serif; font-size: 17px; line-height: 1.85; color: rgba(251,248,241,0.78); margin: 0;">Locals call ahead for the sunset seats. You should too: <a href="tel:7275961515" class="link-gold">(727) 596-1515</a>.</p>
+      </div>
+      <div class="img-fill" style="width: 100%; height: 520px; background-image: url('assets/setting-patio.jpg');"></div>
+    </div>
+  </div>
+
+  <!-- ============ FEATURE 2: THE KITCHEN ============ -->
+  <div id="kitchen" style="max-width: 1200px; margin: 0 auto; padding: 130px 56px; display: grid; grid-template-columns: 1fr 1fr; gap: 90px; align-items: center;">
+    <div class="img-fill" style="width: 100%; height: 520px; background-image: url('assets/kitchen-flames.jpg');"></div>
+    <div>
+      <div style="font-size: 12px; letter-spacing: 4.5px; color: #BE9A4E; margin-bottom: 18px;">THE KITCHEN</div>
+      <h2 style="font-family: 'Marcellus', serif; font-size: 46px; font-weight: 400; margin: 0 0 28px; line-height: 1.15; text-wrap: balance;">If it&rsquo;s on your plate, it was made from scratch today</h2>
+      <p style="font-family: 'Lora', serif; font-size: 17px; line-height: 1.85; color: #3D4D58; margin: 0 0 20px;">San Marzano tomatoes, fresh basil, and garlic perfuming the air &mdash; that&rsquo;s the foundation. On top of it: hand-picked local grouper, tender veal, juicy steaks, and signature pizzas from the brick oven.</p>
+      <p style="font-family: 'Lora', serif; font-size: 17px; line-height: 1.85; color: #3D4D58; margin: 0 0 36px;">Traditional Italian meets tropical seafood &mdash; dishes you&rsquo;d find in Naples, made with what the Gulf gave us this morning.</p>
+      <a href="#menu" class="link-rule" style="font-size: 13px;">SEE WHAT&rsquo;S COOKING &rarr;</a>
+    </div>
+  </div>
+
+  <!-- ============ MENU TEASER ============ -->
+  <div id="menu" style="background: #F2EDE0; border-top: 1px solid rgba(190,154,78,0.3); border-bottom: 1px solid rgba(190,154,78,0.3);">
+    <div style="max-width: 1080px; margin: 0 auto; padding: 120px 56px; text-align: center;">
+      <div style="font-size: 12px; letter-spacing: 4.5px; color: #BE9A4E; margin-bottom: 18px;">FROM THE MENU</div>
+      <h2 style="font-family: 'Marcellus', serif; font-size: 46px; font-weight: 400; margin: 0 0 64px; line-height: 1.15;">What the regulars order</h2>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 36px 80px; text-align: left;">
+        <div style="display: flex; flex-direction: column; gap: 8px; border-bottom: 1px solid rgba(28,43,54,0.12); padding-bottom: 24px;">
+          <div style="display: flex; align-items: baseline; gap: 16px; justify-content: space-between;">
+            <span style="font-family: 'Marcellus', serif; font-size: 23px; color: #1C2B36;">Local Grouper</span>
+            <span style="font-size: 11px; letter-spacing: 2.5px; color: #BE9A4E; white-space: nowrap;">GULF FRESH</span>
+          </div>
+          <span style="font-family: 'Lora', serif; font-style: italic; font-size: 15px; color: #5A6973; line-height: 1.6;">Hand-picked at the docks, sauteed to order. Ask what came in this morning.</span>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 8px; border-bottom: 1px solid rgba(28,43,54,0.12); padding-bottom: 24px;">
+          <div style="display: flex; align-items: baseline; gap: 16px; justify-content: space-between;">
+            <span style="font-family: 'Marcellus', serif; font-size: 23px; color: #1C2B36;">Spaghetti &amp; Meatballs</span>
+            <span style="font-size: 11px; letter-spacing: 2.5px; color: #BE9A4E; white-space: nowrap;">SINCE 1989</span>
+          </div>
+          <span style="font-family: 'Lora', serif; font-style: italic; font-size: 15px; color: #5A6973; line-height: 1.6;">Slow-simmered, absurdly big, and the reason people cross the bridge.</span>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 8px; border-bottom: 1px solid rgba(28,43,54,0.12); padding-bottom: 24px;">
+          <div style="display: flex; align-items: baseline; gap: 16px; justify-content: space-between;">
+            <span style="font-family: 'Marcellus', serif; font-size: 23px; color: #1C2B36;">Veal Scaloppine</span>
+            <span style="font-size: 11px; letter-spacing: 2.5px; color: #BE9A4E; white-space: nowrap;">FAMILY RECIPE</span>
+          </div>
+          <span style="font-family: 'Lora', serif; font-style: italic; font-size: 15px; color: #5A6973; line-height: 1.6;">Tender veal, done the way TJ&rsquo;s family has made it for a century.</span>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 8px; border-bottom: 1px solid rgba(28,43,54,0.12); padding-bottom: 24px;">
+          <div style="display: flex; align-items: baseline; gap: 16px; justify-content: space-between;">
+            <span style="font-family: 'Marcellus', serif; font-size: 23px; color: #1C2B36;">Brick-Oven Pizza</span>
+            <span style="font-size: 11px; letter-spacing: 2.5px; color: #BE9A4E; white-space: nowrap;">HAND TOSSED</span>
+          </div>
+          <span style="font-family: 'Lora', serif; font-style: italic; font-size: 15px; color: #5A6973; line-height: 1.6;">Where TJ started &mdash; hand-tossed, blistered, big enough to share.</span>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 8px; border-bottom: 1px solid rgba(28,43,54,0.12); padding-bottom: 24px;">
+          <div style="display: flex; align-items: baseline; gap: 16px; justify-content: space-between;">
+            <span style="font-family: 'Marcellus', serif; font-size: 23px; color: #1C2B36;">Destination Filet</span>
+            <span style="font-size: 11px; letter-spacing: 2.5px; color: #BE9A4E; white-space: nowrap;">HOUSE SIGNATURE</span>
+          </div>
+          <span style="font-family: 'Lora', serif; font-style: italic; font-size: 15px; color: #5A6973; line-height: 1.6;">The signature cut. Order it once and you&rsquo;ll understand the name.</span>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 8px; border-bottom: 1px solid rgba(28,43,54,0.12); padding-bottom: 24px;">
+          <div style="display: flex; align-items: baseline; gap: 16px; justify-content: space-between;">
+            <span style="font-family: 'Marcellus', serif; font-size: 23px; color: #1C2B36;">Tropical Seafood</span>
+            <span style="font-size: 11px; letter-spacing: 2.5px; color: #BE9A4E; white-space: nowrap;">COASTAL</span>
+          </div>
+          <span style="font-family: 'Lora', serif; font-style: italic; font-size: 15px; color: #5A6973; line-height: 1.6;">Italian technique, Gulf catch. It changes with the boats.</span>
+        </div>
+      </div>
+      <p style="font-family: 'Lora', serif; font-style: italic; font-size: 17px; color: #5A6973; margin: 56px 0 28px;">Big portions, a serious wine book, and a kids&rsquo; menu that isn&rsquo;t an afterthought.</p>
+      <a href="tel:7275961515" class="btn-navy" style="font-size: 13px; padding: 18px 44px;">TASTE IT TONIGHT &middot; (727) 596-1515</a>
+    </div>
+  </div>
+
+  <!-- ============ FEATURE 3: HOSPITALITY / EVENTS ============ -->
+  <div style="max-width: 1200px; margin: 0 auto; padding: 130px 56px; display: grid; grid-template-columns: 1fr 1fr; gap: 90px; align-items: center;">
+    <div>
+      <div style="font-size: 12px; letter-spacing: 4.5px; color: #BE9A4E; margin-bottom: 18px;">GATHER WITH US</div>
+      <h2 style="font-family: 'Marcellus', serif; font-size: 46px; font-weight: 400; margin: 0 0 28px; line-height: 1.15; text-wrap: balance;">Bring everybody. We&rsquo;ll push the tables together.</h2>
+      <p style="font-family: 'Lora', serif; font-size: 17px; line-height: 1.85; color: #3D4D58; margin: 0 0 20px;">Anniversaries, rehearsal dinners, a big table of sunburned cousins &mdash; our private dining rooms and garden patio have hosted them all for three decades. Big portions, warm service, and a staff that remembers your name by the second visit.</p>
+      <p style="font-family: 'Lora', serif; font-size: 17px; line-height: 1.85; color: #3D4D58; margin: 0 0 36px;">Tell us the occasion. We&rsquo;ll take care of the rest.</p>
+      <a href="tel:7275961515" class="btn-gold" style="font-size: 13px; padding: 16px 36px;">TELL US THE OCCASION &middot; (727) 596-1515</a>
+    </div>
+    <div class="img-fill" style="width: 100%; height: 520px; background-image: url('assets/events-table.jpg');"></div>
+  </div>
+
+  <!-- ============ FOOTER / VISIT ============ -->
+  <div id="visit" style="background: #14242F; color: #FBF8F1;">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 110px 56px 60px;">
+      <div style="display: grid; grid-template-columns: 1.2fr 1fr 1fr; gap: 80px; align-items: start;">
+        <div>
+          <div style="font-family: 'Marcellus', serif; font-size: 40px; letter-spacing: 2px; line-height: 1;">TJ&rsquo;S</div>
+          <div style="font-size: 10px; letter-spacing: 4.5px; color: #E3C97F; margin-top: 8px; margin-bottom: 28px;">ITALIAN CAF&Eacute; &middot; EST. 1989</div>
+          <p style="font-family: 'Lora', serif; font-style: italic; font-size: 16px; line-height: 1.8; color: rgba(251,248,241,0.7); margin: 0; max-width: 320px;">Steps from the sand on Gulf Boulevard, between Belleair Beach and Indian Shores. See you tonight.</p>
+        </div>
+        <div>
+          <div style="font-size: 12px; letter-spacing: 3.5px; color: #E3C97F; margin-bottom: 22px;">FIND US</div>
+          <p style="font-size: 16px; line-height: 1.9; margin: 0 0 18px; color: rgba(251,248,241,0.85);">1515 Gulf Boulevard<br>Indian Rocks Beach, FL 33785</p>
+          <a href="tel:7275961515" class="tel-footer" style="font-size: 18px;">(727) 596-1515</a>
+        </div>
+        <div>
+          <div style="font-size: 12px; letter-spacing: 3.5px; color: #E3C97F; margin-bottom: 22px;">HOURS</div>
+          <p style="font-size: 15px; line-height: 2; margin: 0; color: rgba(251,248,241,0.85);">Monday &ndash; Wednesday &middot; 3 &ndash; 10 PM<br>Thursday &ndash; Sunday &middot; 12 &ndash; 10 PM<br><span style="color: rgba(251,248,241,0.55);">Takeout daily from 3 PM</span></p>
+        </div>
+      </div>
+      <div style="margin-top: 70px; height: 260px; background: repeating-linear-gradient(45deg, rgba(251,248,241,0.05), rgba(251,248,241,0.05) 14px, rgba(251,248,241,0.09) 14px, rgba(251,248,241,0.09) 28px); display: flex; align-items: center; justify-content: center;">
+        <span style="font-family: monospace; font-size: 13px; letter-spacing: 1px; color: rgba(251,248,241,0.55);">google&nbsp;map&nbsp;embed&nbsp;&mdash;&nbsp;1515&nbsp;Gulf&nbsp;Blvd,&nbsp;Indian&nbsp;Rocks&nbsp;Beach</span>
+      </div>
+      <div style="margin-top: 56px; padding-top: 28px; border-top: 1px solid rgba(251,248,241,0.15); display: flex; justify-content: space-between; align-items: center;">
+        <span style="font-size: 11px; letter-spacing: 2.5px; color: rgba(251,248,241,0.45);">&copy; 2026 TJ&rsquo;S ITALIAN CAF&Eacute; &middot; INDIAN ROCKS BEACH, FLORIDA</span>
+        <span style="font-size: 11px; letter-spacing: 2.5px; color: rgba(251,248,241,0.45);">@TJSITALIANCAFE</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+(function () {
+  var nav = document.getElementById('sticky-nav');
+  window.addEventListener('scroll', function () {
+    nav.classList.toggle('show', window.scrollY > 140);
+  }, { passive: true });
+})();
+</script>
+</body>
+</html>
