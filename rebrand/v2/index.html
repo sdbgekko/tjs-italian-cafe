@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TJ&rsquo;s Italian Caf&eacute; &middot; Indian Rocks Beach &middot; Est. 1989</title>
+<meta name="description" content="TJ's Italian Cafe — family owned since 1989, one block from the sand in Indian Rocks Beach, Florida. Scratch-made Italian, fresh Gulf seafood, brick oven pizza.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&amp;family=Lora:ital,wght@0,400;0,500;1,400;1,500&amp;family=Jost:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: #FBF8F1; font-family: 'Jost', sans-serif; color: #1C2B36; }
+  ::selection { background: #BE9A4E; color: #FBF8F1; }
+  .img-fill { display: block; background-size: cover; background-position: center; }
+  a.nav-link { color: #FBF8F1; text-decoration: none; letter-spacing: 2.5px; font-weight: 500; transition: color 0.25s; font-size: 13px; }
+  a.nav-link:hover { color: #E3C97F; }
+  a.btn-gold { display: inline-block; background: #BE9A4E; color: #14242F; text-decoration: none; letter-spacing: 3px; font-weight: 600; transition: background 0.25s; }
+  a.btn-gold:hover { background: #E3C97F; }
+  a.btn-ghost { display: inline-block; border: 1px solid rgba(251,248,241,0.6); color: #FBF8F1; text-decoration: none; letter-spacing: 3px; font-weight: 500; transition: border-color 0.25s, background 0.25s; }
+  a.btn-ghost:hover { border-color: #FBF8F1; background: rgba(251,248,241,0.1); }
+  a.link-rule { display: inline-block; color: #14242F; text-decoration: none; letter-spacing: 3px; font-weight: 600; border-bottom: 2px solid #BE9A4E; padding-bottom: 6px; transition: color 0.25s; font-size: 13px; }
+  a.link-rule:hover { color: #BE9A4E; }
+  a.btn-navy { display: inline-block; background: #14242F; color: #FBF8F1; text-decoration: none; letter-spacing: 3px; font-weight: 500; transition: background 0.25s, color 0.25s; }
+  a.btn-navy:hover { background: #BE9A4E; color: #14242F; }
+  a.link-gold { color: #E3C97F; text-decoration: none; border-bottom: 1px solid rgba(227,201,127,0.5); }
+  a.tel-footer { color: #FBF8F1; text-decoration: none; letter-spacing: 1px; border-bottom: 1px solid #BE9A4E; padding-bottom: 3px; transition: color 0.25s; font-size: 18px; }
+  a.tel-footer:hover { color: #E3C97F; }
+
+  .pad-x { padding-left: clamp(18px, 5vw, 56px); padding-right: clamp(18px, 5vw, 56px); }
+  .kicker { font-size: 12px; letter-spacing: 4.5px; margin-bottom: 18px; }
+  h2.sec { font-family: 'Marcellus', serif; font-weight: 400; font-size: clamp(30px, 5.5vw, 46px); margin: 0 0 28px; line-height: 1.15; text-wrap: balance; }
+  p.body { font-family: 'Lora', serif; font-size: clamp(16px, 2vw, 17px); line-height: 1.85; margin: 0 0 20px; }
+
+  /* ---- top nav ---- */
+  .nav-over { position: absolute; top: 0; left: 0; right: 0; z-index: 50; display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 24px clamp(18px, 5vw, 56px); }
+  .brand { display: flex; flex-direction: column; line-height: 1; }
+  .brand .b1 { font-family: 'Marcellus', serif; font-size: 34px; color: #FBF8F1; letter-spacing: 2px; }
+  .brand .b2 { font-size: 10px; letter-spacing: 4.5px; color: #E3C97F; margin-top: 6px; }
+  .nav-links { display: flex; align-items: center; gap: clamp(16px, 3vw, 36px); }
+  .nav-call { font-size: 13px; letter-spacing: 2.5px; padding: 14px 28px; }
+  #sticky-nav { position: fixed; top: 0; left: 0; right: 0; z-index: 60; display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 12px clamp(18px, 5vw, 56px); background: rgba(20, 36, 47, 0.97); box-shadow: 0 2px 24px rgba(20, 36, 47, 0.35); transform: translateY(-110%); transition: transform 0.3s ease; }
+  #sticky-nav.show { transform: translateY(0); }
+  .sticky-brand { display: flex; align-items: baseline; gap: 14px; }
+  .sticky-brand .b1 { font-family: 'Marcellus', serif; font-size: 24px; color: #FBF8F1; letter-spacing: 2px; }
+  .sticky-brand .b2 { font-size: 9px; letter-spacing: 4px; color: #E3C97F; }
+  .sticky-links { display: flex; align-items: center; gap: clamp(14px, 2.5vw, 32px); }
+  .sticky-links .nav-link { font-size: 12px; }
+  .sticky-call { font-size: 12px; letter-spacing: 2.5px; padding: 11px 22px; }
+
+  /* ---- hero ---- */
+  .hero { position: relative; height: 92vh; min-height: 560px; background: #14242F; }
+  .hero-img { position: absolute; inset: 0; width: 100%; height: 100%; }
+  .hero-shade { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(20,36,47,0.55) 0%, rgba(20,36,47,0.15) 45%, rgba(20,36,47,0.72) 100%); pointer-events: none; }
+  .hero-content { position: absolute; left: 0; right: 0; bottom: 0; padding: 0 clamp(18px, 5vw, 56px) clamp(48px, 9vh, 88px); display: flex; flex-direction: column; align-items: center; text-align: center; pointer-events: none; }
+  .hero-kicker { font-size: clamp(11px, 1.6vw, 13px); letter-spacing: 5px; color: #E3C97F; margin-bottom: 22px; }
+  .hero h1 { font-family: 'Marcellus', serif; font-size: clamp(36px, 8vw, 76px); font-weight: 400; color: #FBF8F1; margin: 0 0 24px; line-height: 1.08; max-width: 980px; text-wrap: balance; }
+  .hero-sub { font-family: 'Lora', serif; font-style: italic; font-size: clamp(17px, 2.5vw, 21px); color: rgba(251,248,241,0.85); margin: 0 0 36px; max-width: 620px; line-height: 1.6; }
+  .hero-ctas { display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; pointer-events: auto; }
+  .hero-ctas a { font-size: 14px; padding: 17px clamp(22px, 4vw, 40px); }
+
+  /* ---- credo strip ---- */
+  .credo { background: #14242F; border-top: 1px solid rgba(227,201,127,0.25); padding: 24px clamp(18px, 5vw, 56px); display: flex; justify-content: center; gap: 18px 64px; flex-wrap: wrap; text-align: center; }
+  .credo span { font-size: 12px; letter-spacing: 3.5px; }
+
+  /* ---- two-column features ---- */
+  .feature { max-width: 1200px; margin: 0 auto; padding-top: clamp(70px, 12vw, 130px); padding-bottom: clamp(70px, 12vw, 130px); display: grid; grid-template-columns: 1fr 1fr; gap: clamp(40px, 7vw, 90px); align-items: center; }
+  .feature .img-fill { width: 100%; height: 520px; }
+  .story-img-wrap { position: relative; }
+  .story-img { width: 100%; height: 620px; }
+  .badge { position: absolute; right: -28px; bottom: -28px; background: #BE9A4E; color: #14242F; padding: 26px 30px; max-width: 230px; }
+  .badge .num { font-family: 'Marcellus', serif; font-size: 44px; line-height: 1; }
+  .badge .lbl { font-size: 11px; letter-spacing: 2.5px; margin-top: 8px; line-height: 1.6; }
+
+  /* ---- gallery ---- */
+  .gallery-wrap { padding-bottom: clamp(70px, 12vw, 130px); max-width: 1320px; margin: 0 auto; }
+  .gallery { display: grid; grid-template-columns: 1.4fr 1fr 1fr; grid-template-rows: 280px 280px; gap: 18px; }
+  .gallery .tall { grid-row: span 2; width: 100%; height: 100%; }
+  .gallery .img-fill { width: 100%; height: 100%; }
+
+  /* ---- menu teaser ---- */
+  .menu-band { background: #F2EDE0; border-top: 1px solid rgba(190,154,78,0.3); border-bottom: 1px solid rgba(190,154,78,0.3); }
+  .menu-inner { max-width: 1080px; margin: 0 auto; padding-top: clamp(70px, 11vw, 120px); padding-bottom: clamp(70px, 11vw, 120px); text-align: center; }
+  .menu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 36px 80px; text-align: left; }
+  .dish { display: flex; flex-direction: column; gap: 8px; border-bottom: 1px solid rgba(28,43,54,0.12); padding-bottom: 24px; }
+  .dish-row { display: flex; align-items: baseline; gap: 16px; justify-content: space-between; }
+  .dish-name { font-family: 'Marcellus', serif; font-size: clamp(20px, 2.6vw, 23px); color: #1C2B36; }
+  .dish-tag { font-size: 11px; letter-spacing: 2.5px; color: #BE9A4E; white-space: nowrap; }
+  .dish-desc { font-family: 'Lora', serif; font-style: italic; font-size: 15px; color: #5A6973; line-height: 1.6; }
+  .menu-close { font-family: 'Lora', serif; font-style: italic; font-size: 17px; color: #5A6973; margin: clamp(36px, 6vw, 56px) 0 28px; }
+
+  /* ---- footer ---- */
+  .footer { background: #14242F; color: #FBF8F1; }
+  .footer-inner { max-width: 1200px; margin: 0 auto; padding-top: clamp(64px, 10vw, 110px); padding-bottom: 60px; }
+  .footer-grid { display: grid; grid-template-columns: 1.2fr 1fr 1fr; gap: clamp(36px, 6vw, 80px); align-items: start; }
+  .foot-h { font-size: 12px; letter-spacing: 3.5px; color: #E3C97F; margin-bottom: 22px; }
+  .foot-map { margin-top: clamp(44px, 7vw, 70px); height: 260px; }
+  .foot-legal { margin-top: clamp(36px, 6vw, 56px); padding-top: 28px; border-top: 1px solid rgba(251,248,241,0.15); display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap; }
+  .foot-legal span { font-size: 11px; letter-spacing: 2.5px; color: rgba(251,248,241,0.45); }
+
+  /* ============ MOBILE ============ */
+  @media (max-width: 920px) {
+    .feature { grid-template-columns: 1fr; gap: 44px; }
+    .feature .img-fill { height: clamp(260px, 55vw, 420px); }
+    .feature.img-right .img-fill { order: -1; }   /* keep image above text when stacked */
+    .story-img { height: clamp(320px, 70vw, 480px); }
+    .badge { right: 12px; bottom: -26px; padding: 20px 22px; }
+    .badge .num { font-size: 36px; }
+    .gallery { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
+    .gallery .tall { grid-row: auto; }
+    .gallery > * { height: clamp(160px, 32vw, 280px); }
+    .menu-grid { grid-template-columns: 1fr; gap: 26px; }
+    .footer-grid { grid-template-columns: 1fr; gap: 36px; }
+  }
+  @media (max-width: 760px) {
+    .nav-over { flex-direction: column; align-items: center; gap: 14px; padding-top: 18px; text-align: center; }
+    .nav-links { flex-wrap: wrap; justify-content: center; gap: 14px 20px; }
+    .nav-call { padding: 12px 22px; }
+    .sticky-links .nav-link { display: none; }   /* sticky bar: brand + call only on phones */
+    .hero { height: 100svh; min-height: 520px; }
+    .hero-ctas { flex-direction: column; width: 100%; max-width: 360px; }
+    .hero-ctas a { text-align: center; }
+    .credo { gap: 12px 28px; padding-top: 20px; padding-bottom: 20px; }
+    .credo span { font-size: 11px; letter-spacing: 2.5px; }
+  }
+  @media (max-width: 540px) {
+    .gallery { grid-template-columns: 1fr 1fr; gap: 10px; }
+    .dish-row { flex-wrap: wrap; gap: 4px 16px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ NAV (over hero) ============ -->
+<div class="nav-over">
+  <div class="brand">
+    <span class="b1">TJ&rsquo;S</span>
+    <span class="b2">ITALIAN CAF&Eacute; &middot; EST. 1989</span>
+  </div>
+  <div class="nav-links">
+    <a href="#story" class="nav-link">OUR STORY</a>
+    <a href="#kitchen" class="nav-link">THE KITCHEN</a>
+    <a href="#menu" class="nav-link">MENU</a>
+    <a href="#visit" class="nav-link">VISIT</a>
+    <a href="tel:7275961515" class="btn-gold nav-call">CALL (727) 596-1515</a>
+  </div>
+</div>
+
+<!-- ============ STICKY NAV (appears on scroll) ============ -->
+<div id="sticky-nav">
+  <div class="sticky-brand">
+    <span class="b1">TJ&rsquo;S</span>
+    <span class="b2">ITALIAN CAF&Eacute;</span>
+  </div>
+  <div class="sticky-links">
+    <a href="#story" class="nav-link">OUR STORY</a>
+    <a href="#kitchen" class="nav-link">THE KITCHEN</a>
+    <a href="#menu" class="nav-link">MENU</a>
+    <a href="#visit" class="nav-link">VISIT</a>
+    <a href="tel:7275961515" class="btn-gold sticky-call">CALL (727) 596-1515</a>
+  </div>
+</div>
+
+<!-- ============ HERO ============ -->
+<div class="hero">
+  <div class="img-fill hero-img" style="background-image: url('../assets/hero-sunset.jpg');"></div>
+  <div class="hero-shade"></div>
+  <div class="hero-content">
+    <div class="hero-kicker">KIM &amp; TJ&rsquo;S &middot; INDIAN ROCKS BEACH &middot; ONE BLOCK FROM THE SAND</div>
+    <h1>Where Indian Rocks Beach has had dinner since 1989</h1>
+    <p class="hero-sub">Hundred-year-old family recipes, fresh-off-the-docks Gulf seafood, and the meatballs people cross the bridge for. Come as you are &mdash; sandy feet and all.</p>
+    <div class="hero-ctas">
+      <a href="tel:7275961515" class="btn-gold">RESERVE TONIGHT &middot; (727) 596-1515</a>
+      <a href="#menu" class="btn-ghost">SEE THE MENU FIRST</a>
+    </div>
+  </div>
+</div>
+
+<!-- ============ CREDO STRIP ============ -->
+<div class="credo">
+  <span style="color: #E3C97F;">FAMILY OWNED &amp; OPERATED</span>
+  <span style="color: rgba(251,248,241,0.55);">EVERY DISH MADE FROM SCRATCH</span>
+  <span style="color: #E3C97F;">HUNDRED-YEAR-OLD RECIPES</span>
+  <span style="color: rgba(251,248,241,0.55);">OPEN 7 DAYS &middot; LUNCH &amp; DINNER</span>
+</div>
+
+<!-- ============ STORY ============ -->
+<div id="story" class="feature pad-x">
+  <div class="story-img-wrap">
+    <div class="img-fill story-img" style="background-image: url('../assets/chef-tj.jpg');"></div>
+    <div class="badge">
+      <div class="num">37+</div>
+      <div class="lbl">YEARS COOKING FOR INDIAN ROCKS BEACH</div>
+    </div>
+  </div>
+  <div>
+    <div class="kicker" style="color: #BE9A4E;">OUR STORY</div>
+    <h2 class="sec" style="font-size: clamp(32px, 5.7vw, 48px);">Started by a kid from Philly. Run by family ever since.</h2>
+    <p class="body" style="color: #3D4D58;">Thomas &ldquo;TJ&rdquo; Smith learned to toss dough in front of a pizza-shop window in Philadelphia. Thirty-seven years later, he&rsquo;s still in this kitchen on Gulf Boulevard &mdash; he and Kim, cooking his family&rsquo;s recipes, some more than a century old, seven nights a week.</p>
+    <p class="body" style="color: #3D4D58; margin-bottom: 36px;">Nothing comes from a freezer. Everything is saut&eacute;ed, baked, and plated to order &mdash; the way it would be at a Sunday table in the old country, with the Gulf breeze drifting in.</p>
+    <a href="#kitchen" class="link-rule">MEET THE KITCHEN &rarr;</a>
+  </div>
+</div>
+
+<!-- ============ GALLERY ============ -->
+<div class="gallery-wrap pad-x">
+  <div class="gallery">
+    <div class="tall">
+      <div class="img-fill" style="background-image: url('../assets/gal-pasta.jpg');"></div>
+    </div>
+    <div class="img-fill" style="background-image: url('../assets/gal-grouper.jpg');"></div>
+    <div class="img-fill" style="background-image: url('../assets/gal-patio.jpg');"></div>
+    <div class="img-fill" style="background-image: url('../assets/gal-wine.jpg');"></div>
+    <div class="img-fill" style="background-image: url('../assets/gal-pizza.jpg');"></div>
+  </div>
+</div>
+
+<!-- ============ FEATURE 1: THE SETTING ============ -->
+<div style="background: #14242F; color: #FBF8F1;">
+  <div class="feature pad-x img-right">
+    <div>
+      <div class="kicker" style="color: #E3C97F;">THE SETTING</div>
+      <h2 class="sec">The patio fills before the sun goes down</h2>
+      <p class="body" style="color: rgba(251,248,241,0.78);">A lush garden patio, a warm dining room humming with Sinatra, and the Gulf of America a short stroll away. Come straight from the sand for sunset cocktails, or dress up a little &mdash; both feel right here.</p>
+      <p class="body" style="color: rgba(251,248,241,0.78); margin: 0;">Locals call ahead for the sunset seats. You should too: <a href="tel:7275961515" class="link-gold">(727) 596-1515</a>.</p>
+    </div>
+    <div class="img-fill" style="background-image: url('../assets/setting-patio.jpg');"></div>
+  </div>
+</div>
+
+<!-- ============ FEATURE 2: THE KITCHEN ============ -->
+<div id="kitchen" class="feature pad-x">
+  <div class="img-fill" style="background-image: url('../assets/kitchen-flames.jpg');"></div>
+  <div>
+    <div class="kicker" style="color: #BE9A4E;">THE KITCHEN</div>
+    <h2 class="sec">If it&rsquo;s on your plate, it was made from scratch today</h2>
+    <p class="body" style="color: #3D4D58;">San Marzano tomatoes, fresh basil, and garlic perfuming the air &mdash; that&rsquo;s the foundation. On top of it: hand-picked local grouper, tender veal, juicy steaks, and signature pizzas from the brick oven.</p>
+    <p class="body" style="color: #3D4D58; margin-bottom: 36px;">Traditional Italian meets tropical seafood &mdash; dishes you&rsquo;d find in Naples, made with what the Gulf gave us this morning.</p>
+    <a href="#menu" class="link-rule">SEE WHAT&rsquo;S COOKING &rarr;</a>
+  </div>
+</div>
+
+<!-- ============ MENU TEASER ============ -->
+<div id="menu" class="menu-band">
+  <div class="menu-inner pad-x">
+    <div class="kicker" style="color: #BE9A4E;">FROM THE MENU</div>
+    <h2 class="sec" style="margin-bottom: clamp(40px, 7vw, 64px);">What the regulars order</h2>
+    <div class="menu-grid">
+      <div class="dish">
+        <div class="dish-row"><span class="dish-name">Local Grouper</span><span class="dish-tag">GULF FRESH</span></div>
+        <span class="dish-desc">Hand-picked at the docks, sauteed to order. Ask what came in this morning.</span>
+      </div>
+      <div class="dish">
+        <div class="dish-row"><span class="dish-name">Spaghetti &amp; Meatballs</span><span class="dish-tag">SINCE 1989</span></div>
+        <span class="dish-desc">Slow-simmered, absurdly big, and the reason people cross the bridge.</span>
+      </div>
+      <div class="dish">
+        <div class="dish-row"><span class="dish-name">Veal Scaloppine</span><span class="dish-tag">FAMILY RECIPE</span></div>
+        <span class="dish-desc">Tender veal, done the way TJ&rsquo;s family has made it for a century.</span>
+      </div>
+      <div class="dish">
+        <div class="dish-row"><span class="dish-name">Brick-Oven Pizza</span><span class="dish-tag">HAND TOSSED</span></div>
+        <span class="dish-desc">Where TJ started &mdash; hand-tossed, blistered, big enough to share.</span>
+      </div>
+      <div class="dish">
+        <div class="dish-row"><span class="dish-name">Destination Filet</span><span class="dish-tag">HOUSE SIGNATURE</span></div>
+        <span class="dish-desc">The signature cut. Order it once and you&rsquo;ll understand the name.</span>
+      </div>
+      <div class="dish">
+        <div class="dish-row"><span class="dish-name">Tropical Seafood</span><span class="dish-tag">COASTAL</span></div>
+        <span class="dish-desc">Italian technique, Gulf catch. It changes with the boats.</span>
+      </div>
+    </div>
+    <p class="menu-close">Big portions, a serious wine book, and a kids&rsquo; menu that isn&rsquo;t an afterthought.</p>
+    <a href="tel:7275961515" class="btn-navy" style="font-size: 13px; padding: 18px 44px;">TASTE IT TONIGHT &middot; (727) 596-1515</a>
+    <div style="margin-top: 26px;"><a href="../menu/" class="link-rule">READ THE FULL MENU</a></div>
+  </div>
+</div>
+
+<!-- ============ FEATURE 3: HOSPITALITY / EVENTS ============ -->
+<div class="feature pad-x img-right">
+  <div>
+    <div class="kicker" style="color: #BE9A4E;">GATHER WITH US</div>
+    <h2 class="sec">Bring everybody. We&rsquo;ll push the tables together.</h2>
+    <p class="body" style="color: #3D4D58;">Anniversaries, rehearsal dinners, a big table of sunburned cousins &mdash; our private dining rooms and garden patio have hosted them all for three decades. Big portions, warm service, and a staff that remembers your name by the second visit.</p>
+    <p class="body" style="color: #3D4D58; margin-bottom: 36px;">Tell us the occasion. We&rsquo;ll take care of the rest.</p>
+    <a href="tel:7275961515" class="btn-gold" style="font-size: 13px; padding: 16px 36px;">TELL US THE OCCASION &middot; (727) 596-1515</a>
+  </div>
+  <div class="img-fill" style="background-image: url('../assets/events-table.jpg');"></div>
+</div>
+
+<!-- ============ FOOTER / VISIT ============ -->
+<div id="visit" class="footer">
+  <div class="footer-inner pad-x">
+    <div class="footer-grid">
+      <div>
+        <div style="font-family: 'Marcellus', serif; font-size: 40px; letter-spacing: 2px; line-height: 1;">TJ&rsquo;S</div>
+        <div style="font-size: 10px; letter-spacing: 4.5px; color: #E3C97F; margin-top: 8px; margin-bottom: 28px;">ITALIAN CAF&Eacute; &middot; EST. 1989</div>
+        <p style="font-family: 'Lora', serif; font-style: italic; font-size: 16px; line-height: 1.8; color: rgba(251,248,241,0.7); margin: 0; max-width: 320px;">Steps from the sand on Gulf Boulevard, between Belleair Beach and Indian Shores. See you tonight.</p>
+      </div>
+      <div>
+        <div class="foot-h">FIND US</div>
+        <p style="font-size: 16px; line-height: 1.9; margin: 0 0 18px; color: rgba(251,248,241,0.85);">1515 Gulf Boulevard<br>Indian Rocks Beach, FL 33785</p>
+        <a href="tel:7275961515" class="tel-footer">(727) 596-1515</a>
+      </div>
+      <div>
+        <div class="foot-h">HOURS</div>
+        <p style="font-size: 15px; line-height: 2; margin: 0; color: rgba(251,248,241,0.85);">Monday &ndash; Wednesday &middot; 3 &ndash; 10 PM<br>Thursday &ndash; Sunday &middot; 12 &ndash; 10 PM<br><span style="color: rgba(251,248,241,0.55);">Takeout daily from 3 PM</span></p>
+      </div>
+    </div>
+    <div class="foot-map">
+      <iframe title="Map to TJ's Italian Caf&eacute;, 1515 Gulf Blvd, Indian Rocks Beach" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1763.0524995168228!2d-82.84793500000002!3d27.898751!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x7d73bfb3116e74aa!2sTj's+Italian+Cafe!5e0!3m2!1sen!2sus!4v1539761127342" width="100%" height="260" style="border: 0; display: block;" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    <div class="foot-legal">
+      <span>&copy; 2026 TJ&rsquo;S ITALIAN CAF&Eacute; &middot; INDIAN ROCKS BEACH, FLORIDA</span>
+      <span>@TJSITALIANCAFE</span>
+    </div>
+  </div>
+</div>
+
+<script>
+(function () {
+  var nav = document.getElementById('sticky-nav');
+  window.addEventListener('scroll', function () {
+    nav.classList.toggle('show', window.scrollY > 140);
+  }, { passive: true });
+})();
+</script>
+</body>
+</html>
