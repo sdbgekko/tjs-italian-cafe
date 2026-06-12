@@ -13,7 +13,7 @@
   body { margin: 0; background: #FBF8F1; font-family: 'Jost', sans-serif; color: #1C2B36; }
   ::selection { background: #BE9A4E; color: #FBF8F1; }
   .img-fill { display: block; background-size: cover; background-position: center; }
-  a.nav-link { color: #FBF8F1; text-decoration: none; letter-spacing: 2.5px; font-weight: 500; transition: color 0.25s; font-size: 13px; }
+  a.nav-link { color: #FBF8F1; text-decoration: none; letter-spacing: 2.5px; font-weight: 500; transition: color 0.25s; font-size: 13px; white-space: nowrap; }
   a.nav-link:hover { color: #E3C97F; }
   a.btn-gold { display: inline-block; background: #BE9A4E; color: #14242F; text-decoration: none; letter-spacing: 3px; font-weight: 600; transition: background 0.25s; }
   a.btn-gold:hover { background: #E3C97F; }
@@ -126,6 +126,16 @@
   @media (max-width: 540px) {
     .gallery { grid-template-columns: 1fr 1fr; gap: 10px; }
     .dish-row { flex-wrap: wrap; gap: 4px 16px; }
+  }
+  /* short viewports (phones held landscape): let the hero flow below the nav
+     instead of bottom-pinning into it */
+  @media (max-height: 560px) {
+    .nav-over { position: relative; background: #14242F; flex-direction: row; flex-wrap: wrap; justify-content: center; gap: 12px 24px; padding-top: 16px; padding-bottom: 16px; }
+    .hero { height: auto; min-height: 0; }
+    .hero-content { position: relative; padding-top: 56px; padding-bottom: 56px; }
+    .hero h1 { font-size: clamp(28px, 5.5vw, 44px); }
+    .hero-sub { font-size: 16px; margin-bottom: 26px; }
+    .hero-ctas { flex-direction: row; flex-wrap: wrap; width: auto; max-width: none; }
   }
 </style>
 </head>
