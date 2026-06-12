@@ -49,8 +49,9 @@
   .sticky-call { font-size: 12px; letter-spacing: 2.5px; padding: 11px 22px; }
 
   /* ---- hero ---- */
-  .hero { position: relative; height: 92vh; min-height: 560px; background: #14242F; }
-  .hero-img { position: absolute; inset: 0; width: 100%; height: 100%; }
+  .hero { position: relative; height: 92vh; min-height: 560px; background: #14242F; overflow: hidden; }
+  .hero-img { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; transition: opacity 3s ease; }
+  .hero-img.is-active { opacity: 1; }
   .hero-shade { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(20,36,47,0.55) 0%, rgba(20,36,47,0.15) 45%, rgba(20,36,47,0.72) 100%); pointer-events: none; }
   .hero-content { position: absolute; left: 0; right: 0; bottom: 0; padding: 0 clamp(18px, 5vw, 56px) clamp(48px, 9vh, 88px); display: flex; flex-direction: column; align-items: center; text-align: center; pointer-events: none; }
   .hero-kicker { font-size: clamp(11px, 1.6vw, 13px); letter-spacing: 5px; color: #E3C97F; margin-bottom: 22px; }
@@ -174,7 +175,10 @@
 
 <!-- ============ HERO ============ -->
 <div class="hero">
-  <div class="img-fill hero-img" style="background-image: url('../assets/hero-sunset.jpg');"></div>
+  <!-- rotating hero gallery: add up to 4 images here; first one shows on load,
+       the rest fade through every 10 seconds -->
+  <div class="img-fill hero-img is-active" style="background-image: url('../assets/hero-sunset.jpg');"></div>
+  <div class="img-fill hero-img" style="background-image: url('../assets/hero-restaurant.jpg');"></div>
   <div class="hero-shade"></div>
   <div class="hero-content">
     <div class="hero-kicker">KIM &amp; TJ&rsquo;S &middot; INDIAN ROCKS BEACH &middot; ONE BLOCK FROM THE SAND</div>
@@ -335,6 +339,17 @@
   window.addEventListener('scroll', function () {
     nav.classList.toggle('show', window.scrollY > 140);
   }, { passive: true });
+
+  // hero gallery: cross-fade to the next image every 10 seconds
+  var slides = document.querySelectorAll('.hero .hero-img');
+  if (slides.length > 1) {
+    var current = 0;
+    setInterval(function () {
+      slides[current].classList.remove('is-active');
+      current = (current + 1) % slides.length;
+      slides[current].classList.add('is-active');
+    }, 10000);
+  }
 })();
 </script>
 </body>
