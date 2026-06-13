@@ -139,6 +139,10 @@
     .hero h1 { font-size: clamp(28px, 5.5vw, 44px); }
     .hero-sub { font-size: 16px; margin-bottom: 26px; }
     .hero-ctas { flex-direction: row; flex-wrap: wrap; width: auto; max-width: none; }
+    /* landscape: restore the original 1-big-left + 4-grid-right collage */
+    .gallery { grid-template-columns: 1.4fr 1fr 1fr; grid-template-rows: clamp(120px, 30vh, 190px) clamp(120px, 30vh, 190px); grid-auto-rows: auto; gap: 12px; }
+    .gallery .tall { grid-row: span 2; }
+    .gallery > *, .gallery .tall .img-fill { height: 100%; }
   }
 </style>
 <!-- Meta Pixel Code -->
