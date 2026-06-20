@@ -164,6 +164,79 @@ fbq('track', 'PageView');
 src="https://www.facebook.com/tr?id=1988533432098166&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Meta Pixel Code -->
+
+<!-- ============ A/B SPLIT-TEST ENGINE (Ava) — /test ONLY ============
+     Front-end half of the CRO station. The backend (Railway dashboard +
+     database + login) is separate and owned by Sherman/Gemma.
+     When the backend is live: set TJS_AB.endpoint, and replace the hardcoded
+     `tests` config below with a fetch of  GET <endpoint>/active-tests?page=/test -->
+<script>
+window.TJS_AB = {
+  // Railway API base (e.g. 'https://xxx.up.railway.app/api') — null until it exists.
+  endpoint: null,
+  tests: {
+    headline: {
+      id: 'headline',
+      name: 'Headline Split Test',
+      page: '/test',
+      element: 'Hero headline',
+      status: 'active',          // 'active' | 'inactive' | 'not-started'
+      allocation: 0.5,           // fraction of traffic sent to Variation
+      variants: {
+        control:   { label: 'Control' },
+        variation: { label: 'Variation',
+          // PLACEHOLDER copy — Jake to supply the real Variation headline.
+          headline: 'Authentic Italian, one block from the sand — since 1989' }
+      }
+    }
+  }
+};
+(function () {
+  var AB = window.TJS_AB;
+  function cookie(name, val) {
+    if (val === undefined) {
+      var m = document.cookie.match('(?:^|; )' + name + '=([^;]*)');
+      return m ? decodeURIComponent(m[1]) : null;
+    }
+    document.cookie = name + '=' + encodeURIComponent(val) +
+      '; path=/; max-age=' + (60 * 60 * 24 * 90) + '; SameSite=Lax';
+  }
+  function param(name) { return new URLSearchParams(window.location.search).get(name); }
+  // Which variant does this visitor see for a given test?
+  AB.assign = function (testId) {
+    var t = AB.tests[testId];
+    if (!t) return 'control';
+    // Preview override for the dashboard's preview buttons: ?v=control / ?v=variation (not tracked)
+    var forced = param('v') || param('ab_' + testId);
+    if (forced === 'control' || forced === 'variation') { AB._preview = true; return forced; }
+    if (t.status !== 'active') return 'control';
+    var key = 'tjs_ab_' + testId;
+    var seen = cookie(key);
+    if (seen === 'control' || seen === 'variation') return seen;
+    // First visit: assign by allocation. (Backend will own true 50/50 round-robin.)
+    var v = (Math.random() < t.allocation) ? 'variation' : 'control';
+    cookie(key, v);
+    return v;
+  };
+  // Record a visit/conversion. Safe no-op until the backend endpoint is wired.
+  AB.track = function (type, testId, variant) {
+    var t = AB.tests[testId];
+    var payload = { testId: testId, test: t && t.name, variant: variant, type: type };
+    if (window.fbq) {
+      try { fbq('trackCustom', type === 'conversion' ? 'AB_PhoneReservation' : 'AB_Visit', payload); } catch (e) {}
+    }
+    if (AB.endpoint) {
+      try {
+        navigator.sendBeacon(AB.endpoint + '/event',
+          new Blob([JSON.stringify(payload)], { type: 'application/json' }));
+      } catch (e) {}
+    } else if (window.console) {
+      console.log('[TJS A/B]', payload, '(no backend yet — would POST)');
+    }
+  };
+})();
+</script>
+<!-- ============ END A/B ENGINE ============ -->
 </head>
 <body>
 
@@ -210,7 +283,21 @@ src="https://www.facebook.com/tr?id=1988533432098166&ev=PageView&noscript=1"
   <div class="hero-shade"></div>
   <div class="hero-content">
     <div class="hero-kicker">KIM &amp; TJ&rsquo;S &middot; INDIAN ROCKS BEACH &middot; ONE BLOCK FROM THE SAND</div>
-    <h1>Where Indian Rocks Beach has had dinner since 1989</h1>
+    <h1 id="ab-headline">Where Indian Rocks Beach has had dinner since 1989</h1>
+    <script>
+    /* Apply the Headline Split Test, synchronously, before paint (no flicker). */
+    (function () {
+      var AB = window.TJS_AB; if (!AB) return;
+      var variant = AB.assign('headline');
+      if (variant === 'variation') {
+        var h = document.getElementById('ab-headline');
+        var copy = AB.tests.headline.variants.variation.headline;
+        if (h && copy) h.textContent = copy;
+      }
+      document.documentElement.setAttribute('data-ab-headline', variant);
+      if (!AB._preview) AB.track('visit', 'headline', variant);
+    })();
+    </script>
     <p class="hero-sub">Hundred-year-old family recipes, fresh-off-the-docks Gulf seafood, and the meatballs people cross the bridge for. Come as you are &mdash; sandy feet and all.</p>
     <div class="hero-ctas">
       <a href="tel:7275961515" class="btn-gold">RESERVE TONIGHT &middot; (727)&nbsp;596&#8209;1515</a>
@@ -377,6 +464,17 @@ src="https://www.facebook.com/tr?id=1988533432098166&ev=PageView&noscript=1"
       current = (current + 1) % slides.length;
       slides[current].classList.add('is-active');
     }, 10000);
+  }
+
+  // A/B conversion tracking: a phone tap = a reservation (TJ's reserves by phone only).
+  var AB = window.TJS_AB;
+  if (AB) {
+    var v = AB.assign('headline');
+    document.querySelectorAll('a[href^="tel:"]').forEach(function (a) {
+      a.addEventListener('click', function () {
+        if (!AB._preview) AB.track('conversion', 'headline', v);
+      });
+    });
   }
 })();
 </script>
