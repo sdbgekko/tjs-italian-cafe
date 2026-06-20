@@ -218,12 +218,25 @@ window.TJS_AB = {
     cookie(key, v);
     return v;
   };
+  function readCookie(n) { var m = document.cookie.match('(?:^|; )' + n + '=([^;]*)'); return m ? decodeURIComponent(m[1]) : undefined; }
   // Record a visit/conversion. Safe no-op until the backend endpoint is wired.
-  AB.track = function (type, testId, variant) {
+  AB.track = function (type, testId, variant, opts) {
+    opts = opts || {};
     var t = AB.tests[testId];
-    var payload = { testId: testId, test: t && t.name, variant: variant, type: type };
-    if (window.fbq) {
-      try { fbq('trackCustom', type === 'conversion' ? 'AB_PhoneReservation' : 'AB_Visit', payload); } catch (e) {}
+    // fbp/fbc are sent to the backend so the server-side (Conversions API) Contact
+    // can match + DEDUPE against this browser event using the SAME eventId.
+    var payload = {
+      testId: testId, test: t && t.name, variant: variant, type: type,
+      eventId: opts.eventId, fbp: readCookie('_fbp'), fbc: readCookie('_fbc'),
+      url: location.href
+    };
+    // Browser Pixel: fire the REAL Meta conversion (standard 'Contact') on conversions,
+    // tagged with the variant, sharing eventId so it dedupes with the CAPI event.
+    if (type === 'conversion' && window.fbq) {
+      try {
+        fbq('track', 'Contact', { ab_test: t && t.name, ab_variant: variant },
+            opts.eventId ? { eventID: opts.eventId } : undefined);
+      } catch (e) {}
     }
     if (AB.endpoint) {
       try {
@@ -472,7 +485,10 @@ window.TJS_AB = {
     var v = AB.assign('headline');
     document.querySelectorAll('a[href^="tel:"]').forEach(function (a) {
       a.addEventListener('click', function () {
-        if (!AB._preview) AB.track('conversion', 'headline', v);
+        if (AB._preview) return;
+        // Shared event id: browser 'Contact' + server-side (CAPI) 'Contact' dedupe on this.
+        var eventId = 'tjs-' + Date.now() + '-' + Math.floor(Math.random() * 1e6);
+        AB.track('conversion', 'headline', v, { eventId: eventId });
       });
     });
   }
