@@ -102,6 +102,17 @@
   }
   .hero-badge .num { font-family: var(--serif-display); font-size: 30px; line-height: 1; display: block; }
   .hero-badge .lbl { font-size: 9.5px; letter-spacing: 2px; text-transform: uppercase; margin-top: 6px; display: block; line-height: 1.4; }
+  .hero-sound {
+    position: absolute; left: 12px; bottom: 12px; display: inline-flex; align-items: center; gap: 7px;
+    background: rgba(20,36,47,0.72); color: var(--cream); border: 1px solid rgba(227,201,127,0.5);
+    border-radius: 999px; padding: 9px 15px 9px 13px; cursor: pointer; font-family: var(--sans);
+    font-size: 13px; font-weight: 600; letter-spacing: .02em; -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px);
+    min-height: 42px;
+  }
+  .hero-sound:hover { background: rgba(20,36,47,0.92); border-color: var(--gold); }
+  .hero-sound:focus-visible { outline: 3px solid var(--gold-lt); outline-offset: 2px; }
+  .hero-sound .ico { font-size: 16px; line-height: 1; }
+  .hero-sound.on .lbl { display: none; }
 
   /* ===== Credo strip ===== */
   .credo {
@@ -238,8 +249,14 @@
       </div>
     </div>
     <div class="hero-art-wrap">
-      <img class="hero-art" src="assets/hero-family-pizza.jpg" width="1100" height="1650"
-           alt="A father and his young daughter building a pepperoni pizza together at the kitchen counter, placing pepperoni on the dough.">
+      <video class="hero-art" id="heroVid" autoplay muted playsinline preload="auto"
+             width="768" height="1168" poster="assets/hero-family-pizza.jpg"
+             aria-label="A father and his young daughter making a pepperoni pizza together at the kitchen counter.">
+        <source src="assets/hero-pizza.mp4" type="video/mp4">
+      </video>
+      <button class="hero-sound" id="heroSound" type="button" aria-label="Tap to play with sound">
+        <span class="ico" aria-hidden="true">&#128263;</span><span class="lbl">Tap for sound</span>
+      </button>
       <div class="hero-badge">
         <span class="num">37</span>
         <span class="lbl">Years of<br>TJ&rsquo;s Recipes</span>
@@ -406,6 +423,24 @@
       msg.style.color = '#1C2B36';
       msg.textContent = 'You’re on the list! We’ll be in touch when kits go live.';
       form.reset();
+    });
+  })();
+</script>
+<script>
+  /* Hero video: autoplays muted + plays once (no loop). Speaker button restarts it WITH sound. */
+  (function () {
+    var v = document.getElementById('heroVid'), b = document.getElementById('heroSound');
+    if (!v || !b) return;
+    var ico = b.querySelector('.ico');
+    b.addEventListener('click', function () {
+      if (v.muted) {
+        v.muted = false; v.currentTime = 0;
+        var p = v.play(); if (p && p.catch) p.catch(function () {});
+        ico.textContent = '🔊'; b.classList.add('on'); b.setAttribute('aria-label', 'Mute');
+      } else {
+        v.muted = true; ico.textContent = '🔇'; b.classList.remove('on');
+        b.setAttribute('aria-label', 'Tap to play with sound');
+      }
     });
   })();
 </script>
