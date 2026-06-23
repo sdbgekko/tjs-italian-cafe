@@ -229,7 +229,29 @@ src="https://www.facebook.com/tr?id=1988533432098166&ev=PageView&noscript=1"
 <!-- ============ STORY ============ -->
 <div id="story" class="feature pad-x">
   <div class="story-img-wrap">
-    <div class="img-fill story-img" style="background-image: url('assets/chef-tj.jpg');"></div>
+    <video id="tj-video" class="img-fill story-img" autoplay muted playsinline preload="auto"
+           poster="assets/chef-tj.jpg" style="object-fit: cover;">
+      <source src="assets/tj-pizza.mp4" type="video/mp4">
+    </video>
+    <button id="tj-sound-btn" type="button" aria-label="Play with sound"
+      style="position:absolute; left:16px; bottom:16px; z-index:3; border:0; cursor:pointer;
+             background:rgba(20,36,47,0.72); color:#FBF8F1; font-family:'Jost',sans-serif;
+             font-size:13px; letter-spacing:1px; padding:10px 16px; border-radius:999px;
+             display:inline-flex; align-items:center; gap:8px;">&#128266; Tap for sound</button>
+    <script>
+    (function () {
+      var v = document.getElementById('tj-video');
+      var b = document.getElementById('tj-sound-btn');
+      if (!v || !b) return;
+      b.addEventListener('click', function () {
+        v.muted = false;
+        v.currentTime = 0;
+        var p = v.play();
+        if (p && p.catch) p.catch(function () {});
+        b.style.display = 'none';
+      });
+    })();
+    </script>
     <div class="badge">
       <div class="num">37+</div>
       <div class="lbl">YEARS COOKING FOR INDIAN ROCKS BEACH</div>
