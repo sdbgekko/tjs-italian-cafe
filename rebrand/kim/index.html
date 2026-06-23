@@ -247,16 +247,9 @@ src="https://www.facebook.com/tr?id=1988533432098166&ev=PageView&noscript=1"
       var b = document.getElementById('tj-sound-btn');
       if (!v || !b) return;
       b.addEventListener('click', function () {
-        if (v.muted) {
-          v.muted = false;
-          v.currentTime = 0;
-          var p = v.play();
-          if (p && p.catch) p.catch(function () {});
-          b.innerHTML = '&#128263; Tap to mute';
-        } else {
-          v.muted = true;
-          b.innerHTML = '&#128266; Tap for sound';
-        }
+        // Pure mute toggle — never restarts/replays the video (it plays once only).
+        v.muted = !v.muted;
+        b.innerHTML = v.muted ? '&#128266; Tap for sound' : '&#128263; Tap to mute';
       });
     })();
     </script>
