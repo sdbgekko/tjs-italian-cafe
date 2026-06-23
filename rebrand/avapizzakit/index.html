@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Ava&rsquo;s Pizza Kit &middot; By TJ&rsquo;s Italian Caf&eacute; &middot; Make Pizza at Home</title>
+<meta name="description" content="Ava's Pizza Kit by TJ's Italian Cafe (Indian Rocks Beach, Est. 1989). The real TJ's pizza, shipped to your kitchen, so your family can roll, top, and bake it together. Where little hands learn big traditions.">
+<style>
+  /* ===== Design tokens — echoes TJ's Italian Cafe rebrand, warmer/playful ===== */
+  :root {
+    --cream:    #FBF8F1;   /* page paper */
+    --cream-2:  #F4EEE0;   /* warm band */
+    --navy:     #14242F;   /* charcoal-navy ink */
+    --navy-2:   #1C2B36;
+    --gold:     #BE9A4E;   /* TJ's gold */
+    --gold-lt:  #E3C97F;
+    --tomato:   #C0492F;   /* warmer kit accent — pepperoni/tomato red */
+    --tomato-dk:#9E3A24;   /* AA-dark for text-on-cream */
+    --ink-soft: #5A6973;
+    --line:     rgba(28,43,54,0.14);
+    --serif-display: 'Marcellus', 'Cormorant Garamond', 'Hoefler Text', 'Times New Roman', serif;
+    --serif-body:    'Lora', 'Iowan Old Style', Georgia, 'Times New Roman', serif;
+    --sans:          'Jost', 'Avenir Next', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0; background: var(--cream); color: var(--navy-2);
+    font-family: var(--serif-body); font-size: 17px; line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+  }
+  ::selection { background: var(--gold); color: var(--cream); }
+  img { display: block; max-width: 100%; }
+
+  a { color: var(--tomato-dk); }
+
+  .wrap { max-width: 1120px; margin: 0 auto; padding-left: clamp(20px, 5vw, 56px); padding-right: clamp(20px, 5vw, 56px); }
+
+  .kicker {
+    font-family: var(--sans); font-size: 12px; letter-spacing: 4px;
+    text-transform: uppercase; font-weight: 600; color: var(--gold);
+    margin: 0 0 16px;
+  }
+  h1, h2, h3 { font-family: var(--serif-display); font-weight: 400; line-height: 1.12; text-wrap: balance; }
+  h2.sec { font-size: clamp(30px, 5.4vw, 46px); margin: 0 0 22px; color: var(--navy); }
+  p.lead { font-family: var(--serif-body); font-size: clamp(17px, 2vw, 19px); color: var(--ink-soft); }
+
+  /* ===== Buttons (AA contrast) ===== */
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center;
+    font-family: var(--sans); font-weight: 600; letter-spacing: 2px; text-transform: uppercase;
+    font-size: 14px; text-decoration: none; cursor: pointer; border: 2px solid transparent;
+    padding: 17px 30px; border-radius: 999px; min-height: 52px; transition: transform .15s, background .2s, color .2s, border-color .2s;
+  }
+  .btn:active { transform: translateY(1px); }
+  .btn-tomato { background: var(--tomato-dk); color: var(--cream); }
+  .btn-tomato:hover { background: #842f1c; }
+  .btn-gold { background: var(--gold); color: var(--navy); }
+  .btn-gold:hover { background: var(--gold-lt); }
+  .btn-ghost { background: transparent; color: var(--cream); border-color: rgba(251,248,241,0.7); }
+  .btn-ghost:hover { background: rgba(251,248,241,0.12); border-color: var(--cream); }
+  .btn-outline { background: transparent; color: var(--navy); border-color: var(--gold); }
+  .btn-outline:hover { background: var(--gold); color: var(--navy); }
+  a:focus-visible, button:focus-visible { outline: 3px solid var(--tomato); outline-offset: 3px; }
+
+  /* ===== Top bar ===== */
+  .topbar {
+    background: var(--navy); color: var(--cream);
+    display: flex; align-items: center; justify-content: space-between; gap: 14px;
+    padding: 14px clamp(20px, 5vw, 56px);
+  }
+  .brand { display: flex; flex-direction: column; line-height: 1.05; }
+  .brand .b1 { font-family: var(--serif-display); font-size: 24px; letter-spacing: 1px; }
+  .brand .b2 { font-family: var(--sans); font-size: 9.5px; letter-spacing: 3.5px; color: var(--gold-lt); margin-top: 5px; text-transform: uppercase; }
+  .topbar .tag-by { font-family: var(--sans); font-size: 11px; letter-spacing: 2.5px; color: rgba(251,248,241,0.7); text-transform: uppercase; }
+
+  /* ===== Hero ===== */
+  .hero { background: var(--navy); color: var(--cream); }
+  .hero-grid {
+    max-width: 1120px; margin: 0 auto; padding: clamp(40px, 7vw, 80px) clamp(20px, 5vw, 56px) clamp(48px, 8vw, 90px);
+    display: grid; grid-template-columns: 1.05fr 0.95fr; gap: clamp(32px, 5vw, 72px); align-items: center;
+  }
+  .hero-copy .kicker { color: var(--gold-lt); }
+  .hero h1 { font-size: clamp(38px, 6.6vw, 68px); color: var(--cream); margin: 0 0 22px; }
+  .hero .tagline {
+    font-family: var(--serif-body); font-style: italic; font-size: clamp(20px, 2.8vw, 26px);
+    color: var(--gold-lt); line-height: 1.45; margin: 0 0 18px;
+  }
+  .hero .hero-sub { font-size: clamp(16px, 2vw, 18px); color: rgba(251,248,241,0.86); margin: 0 0 34px; max-width: 30em; }
+  .hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; }
+  .hero-art-wrap { position: relative; }
+  .hero-art {
+    width: 100%; height: auto; border-radius: 14px;
+    box-shadow: 0 24px 60px rgba(0,0,0,0.45); border: 3px solid rgba(227,201,127,0.35);
+  }
+  .hero-badge {
+    position: absolute; right: -14px; bottom: -18px; background: var(--gold); color: var(--navy);
+    font-family: var(--sans); text-align: center; padding: 16px 18px; border-radius: 12px;
+    box-shadow: 0 10px 28px rgba(0,0,0,0.35);
+  }
+  .hero-badge .num { font-family: var(--serif-display); font-size: 30px; line-height: 1; display: block; }
+  .hero-badge .lbl { font-size: 9.5px; letter-spacing: 2px; text-transform: uppercase; margin-top: 6px; display: block; line-height: 1.4; }
+
+  /* ===== Credo strip ===== */
+  .credo {
+    background: var(--navy); border-top: 1px solid rgba(227,201,127,0.25);
+    display: flex; justify-content: center; flex-wrap: wrap; gap: 14px 48px;
+    padding: 20px clamp(20px, 5vw, 56px); text-align: center;
+  }
+  .credo span { font-family: var(--sans); font-size: 12px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--gold-lt); }
+  .credo span.dim { color: rgba(251,248,241,0.6); }
+
+  /* ===== Generic section ===== */
+  section { padding-top: clamp(56px, 9vw, 104px); padding-bottom: clamp(56px, 9vw, 104px); }
+  .sec-head { text-align: center; max-width: 40em; margin: 0 auto clamp(40px, 6vw, 64px); }
+  .sec-head .kicker { color: var(--tomato-dk); }
+
+  /* ===== In the kit ===== */
+  .kit { background: var(--cream-2); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .kit-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: clamp(20px, 3vw, 32px); }
+  .kit-card {
+    background: var(--cream); border: 1px solid var(--line); border-radius: 14px;
+    padding: clamp(22px, 3vw, 30px); display: flex; gap: 18px; align-items: flex-start;
+  }
+  .kit-card .ico {
+    flex: 0 0 auto; width: 52px; height: 52px; border-radius: 50%;
+    background: var(--tomato-dk); color: var(--cream); display: flex; align-items: center; justify-content: center;
+    font-size: 26px; line-height: 1;
+  }
+  .kit-card h3 { font-size: 23px; margin: 2px 0 8px; color: var(--navy); }
+  .kit-card p { margin: 0; font-size: 16px; color: var(--ink-soft); line-height: 1.65; }
+  .kit-note { text-align: center; font-style: italic; color: var(--ink-soft); margin: clamp(34px, 5vw, 48px) auto 0; max-width: 36em; }
+
+  /* ===== How it works ===== */
+  .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: clamp(20px, 3vw, 30px); }
+  .step { text-align: center; }
+  .step .n {
+    width: 64px; height: 64px; margin: 0 auto 18px; border-radius: 50%;
+    background: var(--navy); color: var(--gold-lt); font-family: var(--serif-display);
+    font-size: 28px; display: flex; align-items: center; justify-content: center;
+    border: 2px solid var(--gold);
+  }
+  .step h3 { font-size: 21px; margin: 0 0 8px; color: var(--navy); }
+  .step p { margin: 0; font-size: 15.5px; color: var(--ink-soft); line-height: 1.6; }
+
+  /* ===== Story ===== */
+  .story { background: var(--navy); color: var(--cream); }
+  .story .kicker { color: var(--gold-lt); }
+  .story h2 { color: var(--cream); }
+  .story p { color: rgba(251,248,241,0.88); font-size: clamp(16px, 2vw, 18px); }
+  .story .pull {
+    font-family: var(--serif-display); font-size: clamp(24px, 3.6vw, 34px); line-height: 1.3;
+    color: var(--gold-lt); border-left: 3px solid var(--gold); padding-left: 22px; margin: 32px 0;
+    text-wrap: balance;
+  }
+  .story-inner { max-width: 760px; }
+
+  /* ===== Final CTA ===== */
+  .cta { background: var(--cream-2); border-top: 1px solid var(--line); text-align: center; }
+  .cta h2 { margin-bottom: 14px; }
+  .cta .lead { margin: 0 auto 30px; max-width: 34em; }
+  .cta-form { max-width: 520px; margin: 0 auto; }
+  .cta-form .row { display: flex; gap: 12px; flex-wrap: wrap; }
+  .cta-form input[type=email] {
+    flex: 1 1 240px; min-width: 0; font-family: var(--sans); font-size: 16px;
+    padding: 16px 18px; border: 2px solid var(--gold); border-radius: 999px; background: var(--cream); color: var(--navy);
+    min-height: 52px;
+  }
+  .cta-form input::placeholder { color: var(--ink-soft); }
+  .cta-form .hint { font-size: 13px; color: var(--ink-soft); margin: 14px 0 0; font-style: italic; }
+  .form-msg { font-family: var(--sans); font-size: 15px; color: var(--tomato-dk); margin-top: 16px; min-height: 1.2em; font-weight: 600; }
+
+  /* ===== Footer ===== */
+  footer { background: var(--navy); color: var(--cream); }
+  .foot-inner { max-width: 1120px; margin: 0 auto; padding: clamp(48px, 7vw, 76px) clamp(20px, 5vw, 56px) 48px; }
+  .foot-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: clamp(28px, 5vw, 64px); align-items: start; }
+  .foot-brand .b1 { font-family: var(--serif-display); font-size: 28px; }
+  .foot-brand .b2 { font-family: var(--sans); font-size: 10px; letter-spacing: 3.5px; color: var(--gold-lt); text-transform: uppercase; margin-top: 6px; }
+  .foot-brand p { color: rgba(251,248,241,0.78); font-size: 16px; margin: 18px 0 0; max-width: 32em; }
+  .foot-h { font-family: var(--sans); font-size: 12px; letter-spacing: 3px; text-transform: uppercase; color: var(--gold-lt); margin: 0 0 16px; }
+  .foot-links a { display: block; color: var(--cream); text-decoration: none; font-family: var(--sans); font-size: 15px; letter-spacing: 0.5px; margin-bottom: 12px; border-bottom: 1px solid transparent; width: fit-content; }
+  .foot-links a:hover { border-bottom-color: var(--gold); color: var(--gold-lt); }
+  .foot-legal {
+    margin-top: clamp(34px, 5vw, 52px); padding-top: 24px; border-top: 1px solid rgba(251,248,241,0.15);
+    display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap;
+  }
+  .foot-legal span { font-family: var(--sans); font-size: 11px; letter-spacing: 2px; color: rgba(251,248,241,0.5); text-transform: uppercase; }
+
+  /* ===== Mobile ===== */
+  @media (max-width: 880px) {
+    .hero-grid { grid-template-columns: 1fr; gap: 40px; text-align: center; padding-top: clamp(32px, 6vw, 56px); }
+    .hero-copy { order: 2; }
+    .hero-art-wrap { order: 1; max-width: 420px; margin: 0 auto; }
+    .hero-ctas { justify-content: center; }
+    .hero .hero-sub { margin-left: auto; margin-right: auto; }
+    .kit-grid { grid-template-columns: 1fr; }
+    .steps { grid-template-columns: 1fr 1fr; gap: 32px 24px; }
+    .foot-grid { grid-template-columns: 1fr; }
+    .story-inner { margin: 0 auto; }
+  }
+  @media (max-width: 520px) {
+    .topbar { flex-direction: column; gap: 8px; text-align: center; }
+    .steps { grid-template-columns: 1fr; }
+    .hero-ctas { flex-direction: column; }
+    .hero-ctas .btn { width: 100%; }
+    .credo { gap: 10px 26px; }
+    .credo span { font-size: 11px; letter-spacing: 1.8px; }
+    .hero-badge { right: 6px; bottom: -14px; padding: 12px 14px; }
+  }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .btn { transition: none; } }
+</style>
+</head>
+<body>
+
+<!-- ===== Top bar ===== -->
+<header class="topbar">
+  <div class="brand">
+    <span class="b1">Ava&rsquo;s Pizza Kit</span>
+    <span class="b2">Made at home &middot; By the family</span>
+  </div>
+  <span class="tag-by">From TJ&rsquo;s Italian Caf&eacute; &middot; Est. 1989</span>
+</header>
+
+<!-- ===== Hero ===== -->
+<main>
+<section class="hero" aria-labelledby="hero-title">
+  <div class="hero-grid">
+    <div class="hero-copy">
+      <p class="kicker">A make-it-together pizza kit, shipped to your door</p>
+      <h1 id="hero-title">Ava&rsquo;s Pizza Kit</h1>
+      <p class="tagline">&ldquo;Where little hands learn big traditions.&rdquo;</p>
+      <p class="hero-sub">The real TJ&rsquo;s pizza &mdash; dough, sauce, cheese, and pepperoni from our 37-year-old recipes &mdash; packed up and sent to your kitchen, so your family can roll it, top it, and bake it together.</p>
+      <div class="hero-ctas">
+        <a href="#order" class="btn btn-gold">Order a Kit</a>
+        <a href="#order" class="btn btn-ghost">Get on the List</a>
+      </div>
+    </div>
+    <div class="hero-art-wrap">
+      <img class="hero-art" src="assets/hero-family-pizza.jpg" width="1100" height="1650"
+           alt="A father and his young daughter building a pepperoni pizza together at the kitchen counter, placing pepperoni on the dough.">
+      <div class="hero-badge">
+        <span class="num">37</span>
+        <span class="lbl">Years of<br>TJ&rsquo;s Recipes</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Credo strip ===== -->
+<div class="credo">
+  <span>The Real TJ&rsquo;s Recipes</span>
+  <span class="dim">Made From Scratch Since 1989</span>
+  <span>Shipped Cold &amp; Fresh</span>
+  <span class="dim">Built for Little Hands</span>
+</div>
+
+<!-- ===== What's in the kit ===== -->
+<section class="kit" id="kit" aria-labelledby="kit-title">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="kicker">What&rsquo;s in the box</p>
+      <h2 class="sec" id="kit-title">Everything to make one pizza the TJ&rsquo;s way</h2>
+      <p class="lead">No guesswork, no grocery run. Each kit arrives portioned and ready &mdash; just clear the counter and wash those little hands.</p>
+    </div>
+    <div class="kit-grid">
+      <div class="kit-card">
+        <span class="ico" aria-hidden="true">&#129385;</span>
+        <div>
+          <h3>Hand-Stretched Dough</h3>
+          <p>A ball of our slow-risen dough, the same recipe we&rsquo;ve pressed by hand since 1989. Soft enough for small hands to shape into a (mostly) round crust.</p>
+        </div>
+      </div>
+      <div class="kit-card">
+        <span class="ico" aria-hidden="true">&#127813;</span>
+        <div>
+          <h3>Our San Marzano Sauce</h3>
+          <p>TJ&rsquo;s scratch-made red sauce &mdash; sweet, slow-simmered tomatoes and herbs &mdash; in a ready-to-spread cup. Spooning and swirling is the kids&rsquo; favorite part.</p>
+        </div>
+      </div>
+      <div class="kit-card">
+        <span class="ico" aria-hidden="true">&#129472;</span>
+        <div>
+          <h3>Fresh-Grated Mozzarella</h3>
+          <p>A bag of the real whole-milk mozzarella we melt every night. Sprinkle it edge to edge &mdash; extra in the middle is allowed.</p>
+        </div>
+      </div>
+      <div class="kit-card">
+        <span class="ico" aria-hidden="true">&#127829;</span>
+        <div>
+          <h3>Pepperoni &amp; Toppings</h3>
+          <p>Classic pepperoni to lay out one by one, plus a pinch of our house seasoning. Want to build your own? Add the toppings your family loves.</p>
+        </div>
+      </div>
+    </div>
+    <p class="kit-note">Each kit makes one 12&Prime; pizza and comes with a simple, picture-friendly recipe card. Order extra kits for a bigger crowd or a pizza-night party.</p>
+  </div>
+</section>
+
+<!-- ===== How it works ===== -->
+<section id="how" aria-labelledby="how-title">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="kicker">Pizza night, the easy way</p>
+      <h2 class="sec" id="how-title">Four steps, the whole family in</h2>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="n" aria-hidden="true">1</div>
+        <h3>Unbox</h3>
+        <p>Open the cooler-packed box and lay out the dough, sauce, cheese, and pepperoni together.</p>
+      </div>
+      <div class="step">
+        <div class="n" aria-hidden="true">2</div>
+        <h3>Roll &amp; Top</h3>
+        <p>Stretch the dough, spread the sauce, scatter the cheese, and let little hands place every pepperoni.</p>
+      </div>
+      <div class="step">
+        <div class="n" aria-hidden="true">3</div>
+        <h3>Bake</h3>
+        <p>Slide it into your home oven. In a few golden, bubbling minutes, the kitchen smells just like TJ&rsquo;s.</p>
+      </div>
+      <div class="step">
+        <div class="n" aria-hidden="true">4</div>
+        <h3>Eat Together</h3>
+        <p>Slice it up and dig in &mdash; the pizza you made as a family always tastes the best.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Story ===== -->
+<section class="story" id="story" aria-labelledby="story-title">
+  <div class="wrap">
+    <div class="story-inner">
+      <p class="kicker">Our story</p>
+      <h2 class="sec" id="story-title">37 years on the beach &mdash; now in your kitchen</h2>
+      <p>Since 1989, TJ&rsquo;s Italian Caf&eacute; has been one block from the sand in Indian Rocks Beach, feeding generations of families the same scratch-made recipes. Kids who once stood on a step-stool to watch the dough get tossed now bring their own kids in for pizza night.</p>
+      <p class="pull">We named the kit after Ava &mdash; the youngest of our family &mdash; because the best part of this place was always the little hands helping in the kitchen.</p>
+      <p>Ava&rsquo;s Pizza Kit packs that tradition into a box and sends it to your table. Same dough, same sauce, same cheese &mdash; made by your family, in your kitchen, with flour on every cheek. Because some things are worth passing down, one pizza night at a time.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Final CTA / sign-up ===== -->
+<section class="cta" id="order" aria-labelledby="order-title">
+  <div class="wrap">
+    <p class="kicker">Be first in line</p>
+    <h2 class="sec" id="order-title">Get on the list for Ava&rsquo;s Pizza Kit</h2>
+    <p class="lead">We&rsquo;re firing up the first batch of kits now. Leave your email and we&rsquo;ll let you know the moment you can order &mdash; plus a launch-day treat for early families.</p>
+    <form class="cta-form" id="signup" novalidate>
+      <div class="row">
+        <label for="email" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);">Email address</label>
+        <input type="email" id="email" name="email" placeholder="you@example.com" autocomplete="email" required>
+        <button type="submit" class="btn btn-tomato">Notify Me</button>
+      </div>
+      <p class="hint">No spam, ever &mdash; just one note when kits go live.</p>
+      <p class="form-msg" id="formMsg" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</section>
+</main>
+
+<!-- ===== Footer ===== -->
+<footer>
+  <div class="foot-inner">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <span class="b1">Ava&rsquo;s Pizza Kit</span>
+        <div class="b2">A Family Project of TJ&rsquo;s Italian Caf&eacute;</div>
+        <p>Family owned and operated in Indian Rocks Beach, Florida since 1989. The recipes that made TJ&rsquo;s, now made at your house.</p>
+      </div>
+      <div class="foot-links">
+        <p class="foot-h">More from TJ&rsquo;s</p>
+        <a href="https://tjsitaliancafe.com/">Visit TJ&rsquo;s Italian Caf&eacute;</a>
+        <a href="#kit">What&rsquo;s in the Kit</a>
+        <a href="#how">How It Works</a>
+        <a href="#order">Get on the List</a>
+      </div>
+    </div>
+    <div class="foot-legal">
+      <span>&copy; 2026 TJ&rsquo;s Italian Caf&eacute; &middot; Indian Rocks Beach, FL</span>
+      <span>Ava&rsquo;s Pizza Kit &middot; Coming Soon</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Demo-only sign-up handler — no backend yet, just confirms to the visitor.
+  (function () {
+    var form = document.getElementById('signup');
+    var msg  = document.getElementById('formMsg');
+    var input = document.getElementById('email');
+    if (!form) return;
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var v = (input.value || '').trim();
+      var ok = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+      if (!ok) {
+        msg.style.color = '#9E3A24';
+        msg.textContent = 'Please enter a valid email so we can reach you.';
+        input.focus();
+        return;
+      }
+      msg.style.color = '#1C2B36';
+      msg.textContent = 'You’re on the list! We’ll be in touch when kits go live.';
+      form.reset();
+    });
+  })();
+</script>
+</body>
+</html>
