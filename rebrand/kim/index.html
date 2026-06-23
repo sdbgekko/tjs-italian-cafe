@@ -78,13 +78,8 @@
 
   /* ---- gallery ---- */
   .gallery-wrap { padding-bottom: clamp(70px, 12vw, 130px); max-width: 1320px; margin: 0 auto; }
-  .gallery { display: grid; grid-template-columns: 1.3fr 1fr 1fr 1.3fr; grid-template-rows: 280px 280px; gap: 18px; }
-  .gallery .tall { grid-column: 1; grid-row: 1 / span 2; width: 100%; height: 100%; }
-  .gallery .tall.tall-r { grid-column: 4; }
-  .gallery .gm1 { grid-column: 2; grid-row: 1; }
-  .gallery .gm2 { grid-column: 3; grid-row: 1; }
-  .gallery .gm3 { grid-column: 2; grid-row: 2; }
-  .gallery .gm4 { grid-column: 3; grid-row: 2; }
+  .gallery { display: grid; grid-template-columns: 1.4fr 1fr 1fr; grid-template-rows: 280px 280px; gap: 18px; }
+  .gallery .tall { grid-row: span 2; width: 100%; height: 100%; }
   .gallery .img-fill { width: 100%; height: 100%; }
 
   /* ---- menu teaser ---- */
@@ -117,7 +112,7 @@
     .badge .num { font-size: 22px; }
     .badge .lbl { font-size: 8px; letter-spacing: 1.5px; margin-top: 5px; }
     .gallery { grid-template-columns: 1fr 1fr; grid-template-rows: none; grid-auto-rows: clamp(150px, 34vw, 240px); }
-    .gallery .tall, .gallery .tall.tall-r, .gallery .gm1, .gallery .gm2, .gallery .gm3, .gallery .gm4 { grid-row: auto; grid-column: auto; }
+    .gallery .tall { grid-row: auto; }
     .gallery > *, .gallery .tall .img-fill { height: 100%; }
     .menu-grid { grid-template-columns: 1fr; gap: 26px; }
     .footer-grid { grid-template-columns: 1fr; gap: 36px; }
@@ -146,9 +141,9 @@
     .hero h1 { font-size: clamp(28px, 5.5vw, 44px); }
     .hero-sub { font-size: 16px; margin-bottom: 26px; }
     .hero-ctas { flex-direction: row; flex-wrap: wrap; width: auto; max-width: none; }
-    /* landscape: even 3-across x 2 collage for all six photos */
-    .gallery { grid-template-columns: 1fr 1fr 1fr; grid-template-rows: clamp(120px, 30vh, 190px) clamp(120px, 30vh, 190px); grid-auto-rows: auto; gap: 12px; }
-    .gallery .tall, .gallery .tall.tall-r, .gallery .gm1, .gallery .gm2, .gallery .gm3, .gallery .gm4 { grid-row: auto; grid-column: auto; }
+    /* landscape: restore the original 1-big-left + 4-grid-right collage */
+    .gallery { grid-template-columns: 1.4fr 1fr 1fr; grid-template-rows: clamp(120px, 30vh, 190px) clamp(120px, 30vh, 190px); grid-auto-rows: auto; gap: 12px; }
+    .gallery .tall { grid-row: span 2; }
     .gallery > *, .gallery .tall .img-fill { height: 100%; }
   }
 </style>
@@ -278,13 +273,10 @@ src="https://www.facebook.com/tr?id=1988533432098166&ev=PageView&noscript=1"
     <div class="tall">
       <div class="img-fill" style="background-image: url('../assets/gal-pasta.jpg');"></div>
     </div>
-    <div class="img-fill gm1" style="background-image: url('../assets/gal-grouper.jpg');"></div>
-    <div class="img-fill gm2" style="background-image: url('../assets/gal-dessert.jpg');"></div>
-    <div class="img-fill gm3" style="background-image: url('../assets/gal-wine.jpg');"></div>
-    <div class="img-fill gm4" style="background-image: url('../assets/gal-pizza.jpg');"></div>
-    <div class="tall tall-r">
-      <div class="img-fill" style="background-image: url('../assets/gal-surfturf.jpg');"></div>
-    </div>
+    <div class="img-fill" style="background-image: url('../assets/gal-grouper.jpg');"></div>
+    <div class="img-fill" style="background-image: url('../assets/gal-dessert.jpg');"></div>
+    <div class="img-fill" style="background-image: url('../assets/gal-wine.jpg');"></div>
+    <div class="img-fill" style="background-image: url('../assets/gal-pizza.jpg');"></div>
   </div>
 </div>
 
@@ -310,6 +302,8 @@ src="https://www.facebook.com/tr?id=1988533432098166&ev=PageView&noscript=1"
     <p class="body" style="color: #3D4D58;">San Marzano tomatoes, fresh basil, and garlic perfuming the air &mdash; that&rsquo;s the foundation. On top of it: hand-picked local grouper, tender veal, juicy steaks, and signature pizzas from the brick oven.</p>
     <p class="body" style="color: #3D4D58; margin-bottom: 36px;">Traditional Italian meets tropical seafood &mdash; dishes you&rsquo;d find in Naples, made with what the Gulf gave us this morning.</p>
     <a href="#menu" class="link-rule">SEE WHAT&rsquo;S COOKING &rarr;</a>
+    <img src="../assets/gal-surfturf.jpg" alt="Steak and lobster with a steak knife through it"
+         style="display:block; width:100%; max-width:320px; height:auto; margin-top:32px; border-radius:2px;">
   </div>
 </div>
 
