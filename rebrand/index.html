@@ -409,31 +409,31 @@ src="https://www.facebook.com/tr?id=1988533432098166&ev=PageView&noscript=1"
 </script>
 
 <!-- ============ BRUNCH POPUP ============ -->
-<div id="brunch-pop-overlay" style="display: none; position: fixed; inset: 0; background: rgba(20,36,47,0.55); z-index: 90; opacity: 0; transition: opacity 0.4s;">
-  <div id="brunch-pop" role="dialog" aria-modal="true" aria-label="Weekend Brunch at TJ's" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: min(92vw, 430px); background: #FBF8F1; border: 2px solid #BE9A4E; border-radius: 4px; box-shadow: 0 18px 60px rgba(0,0,0,0.35); text-align: center; padding: 34px 26px 30px;">
-    <button id="brunch-pop-close" aria-label="Close" style="position: absolute; top: 8px; right: 12px; background: none; border: 0; font-size: 26px; line-height: 1; color: #8A6D2F; cursor: pointer; padding: 6px;">&times;</button>
+<div id="tjs-weekend-invite-veil" style="display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(20,36,47,0.55); z-index: 90; opacity: 0; transition: opacity 0.4s;">
+  <div id="tjs-weekend-invite" role="dialog" aria-modal="true" aria-label="Weekend Brunch at TJ's" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: min(92vw, 430px); background: #FBF8F1; border: 2px solid #BE9A4E; border-radius: 4px; box-shadow: 0 18px 60px rgba(0,0,0,0.35); text-align: center; padding: 34px 26px 30px;">
+    <button id="tjs-weekend-invite-x" aria-label="Close" style="position: absolute; top: 8px; right: 12px; background: none; border: 0; font-size: 26px; line-height: 1; color: #8A6D2F; cursor: pointer; padding: 6px;">&times;</button>
     <div style="font-family: 'Jost', sans-serif; font-size: 11px; letter-spacing: 3px; color: #BE9A4E; font-weight: 500;">TJ&rsquo;S ITALIAN CAF&Eacute; &middot; SINCE 1989</div>
     <div style="font-family: 'Marcellus', serif; font-size: 30px; color: #8A6D2F; margin: 12px 0 2px; line-height: 1.2;">Weekend Brunch<br>in Indian Rocks Beach</div>
     <div style="font-family: 'Lora', serif; font-style: italic; font-size: 15px; color: #5A6973; margin: 6px 0 14px;">Saturday &amp; Sunday &middot; 10 AM&ndash;2 PM</div>
     <p style="font-family: 'Lora', serif; font-size: 14.5px; line-height: 1.7; color: #3D4D58; margin: 0 0 18px;">Blueberry Ricotta Pancakes, Eggs Benedict Arnold, Chicken &amp; Waffles, TJ&rsquo;s Brunch Pizza &mdash; plus Mimosas, Bloody Marys &amp; Espresso Martinis, steps from the Gulf.</p>
     <a href="menu/#g3" style="display: inline-block; background: #14242F; color: #E3C97F; text-decoration: none; font-family: 'Jost', sans-serif; font-size: 12px; letter-spacing: 2.5px; font-weight: 600; padding: 15px 30px; border: 1px solid #BE9A4E; border-radius: 2px;">SEE THE BRUNCH MENU</a>
-    <div style="margin-top: 12px;"><a id="brunch-pop-dismiss" href="#" style="font-family: 'Lora', serif; font-style: italic; font-size: 12.5px; color: #8A6D2F;">Maybe later</a></div>
+    <div style="margin-top: 12px;"><a id="tjs-weekend-invite-later" href="#" style="font-family: 'Lora', serif; font-style: italic; font-size: 12.5px; color: #8A6D2F;">Maybe later</a></div>
   </div>
 </div>
 <script>
 (function(){
   try { if (sessionStorage.getItem('tjsBrunchPopSeen')) return; } catch(e) {}
-  var ov = document.getElementById('brunch-pop-overlay');
+  var ov = document.getElementById('tjs-weekend-invite-veil');
   function close(){ ov.style.opacity = 0; setTimeout(function(){ ov.style.display = 'none'; }, 400); try { sessionStorage.setItem('tjsBrunchPopSeen','1'); } catch(e) {} }
   setTimeout(function(){
     ov.style.display = 'block';
     requestAnimationFrame(function(){ ov.style.opacity = 1; });
   }, 1800);
-  document.getElementById('brunch-pop-close').addEventListener('click', close);
-  document.getElementById('brunch-pop-dismiss').addEventListener('click', function(e){ e.preventDefault(); close(); });
+  document.getElementById('tjs-weekend-invite-x').addEventListener('click', close);
+  document.getElementById('tjs-weekend-invite-later').addEventListener('click', function(e){ e.preventDefault(); close(); });
   ov.addEventListener('click', function(e){ if (e.target === ov) close(); });
   document.addEventListener('keydown', function(e){ if (e.key === 'Escape') close(); });
-  document.getElementById('brunch-pop').querySelector('a[href="menu/#g3"]').addEventListener('click', function(){ try { sessionStorage.setItem('tjsBrunchPopSeen','1'); } catch(e) {} });
+  document.getElementById('tjs-weekend-invite').querySelector('a[href="menu/#g3"]').addEventListener('click', function(){ try { sessionStorage.setItem('tjsBrunchPopSeen','1'); } catch(e) {} });
 })();
 </script>
 </body>
